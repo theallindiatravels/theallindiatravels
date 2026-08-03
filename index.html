@@ -18,10 +18,47 @@
       --text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
       --text-hero:clamp(3rem,.5rem + 7vw,6rem);
       --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;
-      --color-bg:#f7f6f2;--color-surface:#f9f8f5;--color-surface-2:#fbfbf9;--color-surface-offset:#edeae5;--color-border:#d4d1ca;--color-text:#28251d;--color-text-muted:#67645d;--color-text-faint:#9c9992;--color-text-inverse:#f9f8f4;--color-primary:#01696f;--color-primary-hover:#0c4e54;--color-primary-highlight:#dbe9e8;--color-link:#e36b2c;--color-link-hover:#b94f18;--shadow-sm:0 1px 2px rgba(0,0,0,.06);--shadow-md:0 10px 30px rgba(0,0,0,.08);--radius-sm:.375rem;--radius-md:.75rem;--radius-lg:1rem;--radius-xl:1.5rem;--content:1200px;--font-display:'Instrument Serif',Georgia,serif;--font-body:'Work Sans',Arial,sans-serif;
+      --color-bg:#f7f6f2;
+      --color-surface:#f9f8f5;
+      --color-surface-2:#fbfbf9;
+      --color-surface-offset:#edeae5;
+      --color-border:#d4d1ca;
+      --color-text:#28251d;
+      --color-text-muted:#67645d;
+      --color-text-faint:#9c9992;
+      --color-text-inverse:#f9f8f4;
+      --color-primary:#01696f;
+      --color-primary-hover:#0c4e54;
+      --color-primary-highlight:#dbe9e8;
+      --color-link:#e36b2c;
+      --color-link-hover:#b94f18;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.06);
+      --shadow-md:0 10px 30px rgba(0,0,0,.08);
+      --radius-sm:.375rem;
+      --radius-md:.75rem;
+      --radius-lg:1rem;
+      --radius-xl:1.5rem;
+      --content:1200px;
+      --font-display:'Instrument Serif',Georgia,serif;
+      --font-body:'Work Sans',Arial,sans-serif;
     }
     [data-theme="dark"]{
-      --color-bg:#171614;--color-surface:#1c1b19;--color-surface-2:#201f1d;--color-surface-offset:#262421;--color-border:#393836;--color-text:#e2dfd9;--color-text-muted:#b3aea4;--color-text-faint:#807c75;--color-text-inverse:#171614;--color-primary:#4f98a3;--color-primary-hover:#227f8b;--color-primary-highlight:#233437;--color-link:#ff9c64;--color-link-hover:#ffb78b;--shadow-sm:0 1px 2px rgba(0,0,0,.25);--shadow-md:0 12px 36px rgba(0,0,0,.35);
+      --color-bg:#171614;
+      --color-surface:#1c1b19;
+      --color-surface-2:#201f1d;
+      --color-surface-offset:#262421;
+      --color-border:#393836;
+      --color-text:#e2dfd9;
+      --color-text-muted:#b3aea4;
+      --color-text-faint:#807c75;
+      --color-text-inverse:#171614;
+      --color-primary:#4f98a3;
+      --color-primary-hover:#227f8b;
+      --color-primary-highlight:#233437;
+      --color-link:#ff9c64;
+      --color-link-hover:#ffb78b;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.25);
+      --shadow-md:0 12px 36px rgba(0,0,0,.35);
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{-webkit-text-size-adjust:none;text-size-adjust:none;scroll-behavior:smooth}
@@ -30,7 +67,8 @@
     a{text-decoration:none;color:inherit}
     button,input,textarea,select{font:inherit;color:inherit}
     button{cursor:pointer;border:none;background:none}
-    .skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:var(--space-4);top:var(--space-4);background:var(--color-primary);color:var(--color-text-inverse);padding:var(--space-3) var(--space-4);border-radius:var(--radius-md);z-index:999}
+    .skip-link{position:absolute;left:-9999px;top:auto}
+    .skip-link:focus{left:var(--space-4);top:var(--space-4);background:var(--color-primary);color:var(--color-text-inverse);padding:var(--space-3) var(--space-4);border-radius:var(--radius-md);z-index:999}
     .container{width:min(calc(100% - 2rem),var(--content));margin-inline:auto}
     .section{padding:clamp(var(--space-12),8vw,var(--space-24)) 0}
     .eyebrow{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.18em;color:var(--color-primary);font-weight:700}
@@ -84,7 +122,8 @@
     textarea{min-height:130px;resize:vertical}
     .footer{padding:var(--space-8) 0;border-top:1px solid color-mix(in srgb,var(--color-text) 10%, transparent)}
     .footer-inner{display:flex;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap;color:var(--color-text-muted);font-size:var(--text-sm)}
-    .reveal{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}
+    .reveal{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.visible{opacity:1;transform:none}
     @media (max-width: 900px){
       .hero-grid,.grid-3,.packages,.contact-wrap{grid-template-columns:1fr}
       .stats{grid-template-columns:1fr 1fr 1fr}
@@ -98,17 +137,25 @@
       .hero-actions{flex-direction:column;align-items:stretch}
       .btn{width:100%}
     }
-    @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+    @media (prefers-reduced-motion: reduce){
+      .reveal{opacity:1;transform:none;transition:none}
+      html{scroll-behavior:auto}
+    }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#home" aria-label="The All India Travels home">
         <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-            <path d="M4 16.5h16"></path><path d="M6 16.5l1-6a2 2 0 0 1 2-1.5h6a2 2 0 0 1 2 1.5l1 6"></path><circle cx="8" cy="17.5" r="1.5"></circle><circle cx="16" cy="17.5" r="1.5"></circle><path d="M9 9V6.5A2.5 2.5 0 0 1 11.5 4h1A2.5 2.5 0 0 1 15 6.5V9"></path>
+            <path d="M4 16.5h16"></path>
+            <path d="M6 16.5l1-6a2 2 0 0 1 2-1.5h6a2 2 0 0 1 2 1.5l1 6"></path>
+            <circle cx="8" cy="17.5" r="1.5"></circle>
+            <circle cx="16" cy="17.5" r="1.5"></circle>
+            <path d="M9 9V6.5A2.5 2.5 0 0 1 11.5 4h1A2.5 2.5 0 0 1 15 6.5V9"></path>
           </svg>
         </span>
         <span class="brand-name">The All India Travels<small>Taxi & Tours</small></span>
@@ -242,6 +289,7 @@
             </li>
           </ul>
         </section>
+
         <section class="form-box reveal" aria-labelledby="enquiry-heading">
           <p class="eyebrow">Enquiry form</p>
           <h2 id="enquiry-heading" style="font-size:var(--text-2xl);margin-top:var(--space-3);">Collect booking details.</h2>
@@ -278,6 +326,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div>© <span id="year"></span> The All India Travels. All rights reserved.</div>
+      <div>Built as a static site for GitHub Pages + GoDaddy custom domain.</div>
     </div>
   </footer>
 
