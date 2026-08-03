@@ -18,17 +18,17 @@
       --text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
       --text-hero:clamp(3rem,.5rem + 7vw,6rem);
       --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;
-      --color-bg:#f7f6f2;--color-surface:#f9f8f5;--color-surface-2:#fbfbf9;--color-surface-offset:#edeae5;--color-border:#d4d1ca;--color-text:#28251d;--color-text-muted:#67645d;--color-text-faint:#9c9992;--color-text-inverse:#f9f8f4;--color-primary:#01696f;--color-primary-hover:#0c4e54;--color-primary-highlight:#dbe9e8;--color-success:#437a22;--shadow-sm:0 1px 2px rgba(0,0,0,.06);--shadow-md:0 10px 30px rgba(0,0,0,.08);--radius-sm:.375rem;--radius-md:.75rem;--radius-lg:1rem;--radius-xl:1.5rem;--content:1200px;--font-display:'Instrument Serif',Georgia,serif;--font-body:'Work Sans',Arial,sans-serif;
+      --color-bg:#f7f6f2;--color-surface:#f9f8f5;--color-surface-2:#fbfbf9;--color-surface-offset:#edeae5;--color-border:#d4d1ca;--color-text:#28251d;--color-text-muted:#67645d;--color-text-faint:#9c9992;--color-text-inverse:#f9f8f4;--color-primary:#01696f;--color-primary-hover:#0c4e54;--color-primary-highlight:#dbe9e8;--color-link:#e36b2c;--color-link-hover:#b94f18;--shadow-sm:0 1px 2px rgba(0,0,0,.06);--shadow-md:0 10px 30px rgba(0,0,0,.08);--radius-sm:.375rem;--radius-md:.75rem;--radius-lg:1rem;--radius-xl:1.5rem;--content:1200px;--font-display:'Instrument Serif',Georgia,serif;--font-body:'Work Sans',Arial,sans-serif;
     }
     [data-theme="dark"]{
-      --color-bg:#171614;--color-surface:#1c1b19;--color-surface-2:#201f1d;--color-surface-offset:#262421;--color-border:#393836;--color-text:#e2dfd9;--color-text-muted:#b3aea4;--color-text-faint:#807c75;--color-text-inverse:#171614;--color-primary:#4f98a3;--color-primary-hover:#227f8b;--color-primary-highlight:#233437;--color-success:#7db55d;--shadow-sm:0 1px 2px rgba(0,0,0,.25);--shadow-md:0 12px 36px rgba(0,0,0,.35);
+      --color-bg:#171614;--color-surface:#1c1b19;--color-surface-2:#201f1d;--color-surface-offset:#262421;--color-border:#393836;--color-text:#e2dfd9;--color-text-muted:#b3aea4;--color-text-faint:#807c75;--color-text-inverse:#171614;--color-primary:#4f98a3;--color-primary-hover:#227f8b;--color-primary-highlight:#233437;--color-link:#ff9c64;--color-link-hover:#ffb78b;--shadow-sm:0 1px 2px rgba(0,0,0,.25);--shadow-md:0 12px 36px rgba(0,0,0,.35);
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{-webkit-text-size-adjust:none;text-size-adjust:none;scroll-behavior:smooth}
     body{min-height:100dvh;font-family:var(--font-body);font-size:var(--text-base);line-height:1.6;background:var(--color-bg);color:var(--color-text)}
     img,svg{display:block;max-width:100%;height:auto}
     a{text-decoration:none;color:inherit}
-    button,input,textarea{font:inherit;color:inherit}
+    button,input,textarea,select{font:inherit;color:inherit}
     button{cursor:pointer;border:none;background:none}
     .skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:var(--space-4);top:var(--space-4);background:var(--color-primary);color:var(--color-text-inverse);padding:var(--space-3) var(--space-4);border-radius:var(--radius-md);z-index:999}
     .container{width:min(calc(100% - 2rem),var(--content));margin-inline:auto}
@@ -75,6 +75,9 @@
     .contact-wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:var(--space-5)}
     .contact-box,.form-box{background:var(--color-surface);padding:var(--space-8);border-radius:var(--radius-xl);border:1px solid color-mix(in srgb,var(--color-text) 10%, transparent)}
     .contact-list{list-style:none;display:grid;gap:var(--space-4);margin-top:var(--space-5)}
+    .contact-list li{line-height:1.7}
+    .contact-list a{color:var(--color-link);text-decoration:none;font-weight:600;word-break:break-word}
+    .contact-list a:hover,.contact-list a:focus-visible{color:var(--color-link-hover);text-decoration:underline}
     form{display:grid;gap:var(--space-4)}
     label{font-size:var(--text-sm);font-weight:600}
     input,textarea,select{width:100%;margin-top:var(--space-2);padding:.9rem 1rem;border-radius:var(--radius-md);border:1px solid var(--color-border);background:var(--color-bg)}
@@ -92,6 +95,8 @@
       .header-inner{align-items:flex-start}
       h1{max-width:10ch}
       .hero-card,.card,.package-panel,.contact-box,.form-box{padding:var(--space-6)}
+      .hero-actions{flex-direction:column;align-items:stretch}
+      .btn{width:100%}
     }
     @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
   </style>
@@ -209,12 +214,32 @@
         <section class="contact-box reveal">
           <p class="eyebrow">Contact</p>
           <h2 style="font-size:var(--text-2xl);margin-top:var(--space-3);">Receive trip enquiries directly.</h2>
-          <p class="muted" style="margin-top:var(--space-4);">Replace the placeholder contact details below with your real phone number, WhatsApp link, email, and service area before publishing.</p>
+          <p class="muted" style="margin-top:var(--space-4);">Updated with clickable phone, WhatsApp, and email links for desktop and mobile users.</p>
           <ul class="contact-list">
-            <li><strong>Phone</strong><div class="muted">+919566066250 , +919710375593</div></li>
-            <li><strong>WhatsApp</strong><div class="muted">https://wa.me/919566066250 ,https://wa.me/919710375539 </div></li>
-            <li><strong>Email</strong><div class="muted">theallindiatravels.com</div></li>
-            <li><strong>Location</strong><div class="muted">Chennai, Tamil Nadu</div></li>
+            <li>
+              <strong>Phone</strong>
+              <div class="muted">
+                <a href="tel:+919566066250">+91 95660 66250</a><br>
+                <a href="tel:+919710375539">+91 97103 75539</a>
+              </div>
+            </li>
+            <li>
+              <strong>WhatsApp</strong>
+              <div class="muted">
+                <a href="https://wa.me/919566066250" target="_blank" rel="noopener noreferrer">https://wa.me/919566066250</a><br>
+                <a href="https://wa.me/919710375539" target="_blank" rel="noopener noreferrer">https://wa.me/919710375539</a>
+              </div>
+            </li>
+            <li>
+              <strong>Email</strong>
+              <div class="muted">
+                <a href="mailto:info@theallindiatravels.com">info@theallindiatravels.com</a>
+              </div>
+            </li>
+            <li>
+              <strong>Location</strong>
+              <div class="muted">Chennai, Tamil Nadu</div>
+            </li>
           </ul>
         </section>
         <section class="form-box reveal" aria-labelledby="enquiry-heading">
