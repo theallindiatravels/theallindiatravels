@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The All India Travels</title>
+  <meta name="description" content="Taxi, airport transfer, outstation cab, and custom South India travel bookings from The All India Travels." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root,[data-theme="light"]{
+      --text-xs:clamp(.75rem,.7rem + .25vw,.875rem);
+      --text-sm:clamp(.875rem,.8rem + .35vw,1rem);
+      --text-base:clamp(1rem,.95rem + .25vw,1.125rem);
+      --text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);
+      --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
+      --text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
+      --text-hero:clamp(3rem,.5rem + 7vw,6rem);
+      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;--space-20:5rem;--space-24:6rem;
+      --color-bg:#f7f6f2;--color-surface:#f9f8f5;--color-surface-2:#fbfbf9;--color-surface-offset:#edeae5;--color-border:#d4d1ca;--color-text:#28251d;--color-text-muted:#67645d;--color-text-faint:#9c9992;--color-text-inverse:#f9f8f4;--color-primary:#01696f;--color-primary-hover:#0c4e54;--color-primary-highlight:#dbe9e8;--color-success:#437a22;--shadow-sm:0 1px 2px rgba(0,0,0,.06);--shadow-md:0 10px 30px rgba(0,0,0,.08);--radius-sm:.375rem;--radius-md:.75rem;--radius-lg:1rem;--radius-xl:1.5rem;--content:1200px;--font-display:'Instrument Serif',Georgia,serif;--font-body:'Work Sans',Arial,sans-serif;
+    }
+    [data-theme="dark"]{
+      --color-bg:#171614;--color-surface:#1c1b19;--color-surface-2:#201f1d;--color-surface-offset:#262421;--color-border:#393836;--color-text:#e2dfd9;--color-text-muted:#b3aea4;--color-text-faint:#807c75;--color-text-inverse:#171614;--color-primary:#4f98a3;--color-primary-hover:#227f8b;--color-primary-highlight:#233437;--color-success:#7db55d;--shadow-sm:0 1px 2px rgba(0,0,0,.25);--shadow-md:0 12px 36px rgba(0,0,0,.35);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-text-size-adjust:none;text-size-adjust:none;scroll-behavior:smooth}
+    body{min-height:100dvh;font-family:var(--font-body);font-size:var(--text-base);line-height:1.6;background:var(--color-bg);color:var(--color-text)}
+    img,svg{display:block;max-width:100%;height:auto}
+    a{text-decoration:none;color:inherit}
+    button,input,textarea{font:inherit;color:inherit}
+    button{cursor:pointer;border:none;background:none}
+    .skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:var(--space-4);top:var(--space-4);background:var(--color-primary);color:var(--color-text-inverse);padding:var(--space-3) var(--space-4);border-radius:var(--radius-md);z-index:999}
+    .container{width:min(calc(100% - 2rem),var(--content));margin-inline:auto}
+    .section{padding:clamp(var(--space-12),8vw,var(--space-24)) 0}
+    .eyebrow{font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.18em;color:var(--color-primary);font-weight:700}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--space-2);min-height:44px;padding:.9rem 1.25rem;border-radius:999px;font-size:var(--text-sm);font-weight:600;transition:.2s ease}
+    .btn-primary{background:var(--color-primary);color:var(--color-text-inverse)}
+    .btn-primary:hover{background:var(--color-primary-hover)}
+    .btn-secondary{border:1px solid var(--color-border);background:var(--color-surface)}
+    .btn-secondary:hover{background:var(--color-surface-offset)}
+    .site-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--color-bg) 88%, transparent);backdrop-filter:blur(14px);border-bottom:1px solid color-mix(in srgb,var(--color-text) 10%, transparent)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:var(--space-4) 0}
+    .brand{display:flex;align-items:center;gap:var(--space-3);font-weight:700}
+    .brand-mark{width:42px;height:42px;padding:8px;border-radius:12px;background:var(--color-primary-highlight);color:var(--color-primary)}
+    .brand-name{display:flex;flex-direction:column;line-height:1.1}
+    .brand-name small{font-size:var(--text-xs);letter-spacing:.12em;text-transform:uppercase;color:var(--color-text-muted)}
+    nav ul{display:flex;list-style:none;gap:var(--space-5);align-items:center;flex-wrap:wrap}
+    nav a{font-size:var(--text-sm);color:var(--color-text-muted)}
+    nav a:hover,nav a:focus-visible{color:var(--color-text)}
+    .theme-toggle{width:44px;height:44px;border-radius:999px;border:1px solid var(--color-border);display:grid;place-items:center;background:var(--color-surface)}
+    .hero{padding:clamp(var(--space-12),8vw,var(--space-24)) 0 var(--space-16)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:var(--space-10);align-items:center}
+    h1,h2,h3{font-family:var(--font-display);line-height:1.05;font-weight:400}
+    h1{font-size:var(--text-hero);max-width:12ch}
+    .hero p{max-width:60ch;margin-top:var(--space-5);color:var(--color-text-muted)}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-6)}
+    .hero-card{background:linear-gradient(180deg,var(--color-surface-2),var(--color-surface));padding:var(--space-8);border-radius:var(--radius-xl);border:1px solid color-mix(in srgb,var(--color-text) 10%, transparent);box-shadow:var(--shadow-md)}
+    .route-list{display:grid;gap:var(--space-4);margin-top:var(--space-6)}
+    .route-item{display:flex;justify-content:space-between;gap:var(--space-4);padding:var(--space-4);border-radius:var(--radius-lg);background:var(--color-bg);border:1px solid var(--color-border)}
+    .route-item strong{display:block}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);margin-top:var(--space-8)}
+    .stat{padding:var(--space-4);border-top:1px solid var(--color-border)}
+    .stat b{display:block;font-size:var(--text-xl);font-family:var(--font-display);font-weight:400}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5)}
+    .card{background:var(--color-surface);padding:var(--space-6);border-radius:var(--radius-xl);border:1px solid color-mix(in srgb,var(--color-text) 10%, transparent);box-shadow:var(--shadow-sm)}
+    .card h3{font-size:var(--text-xl);margin:var(--space-3) 0}
+    .card p,.muted{color:var(--color-text-muted)}
+    .icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--color-primary-highlight);color:var(--color-primary)}
+    .packages{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--space-5)}
+    .package-panel{background:var(--color-surface);border-radius:var(--radius-xl);padding:var(--space-8);border:1px solid color-mix(in srgb,var(--color-text) 10%, transparent)}
+    .package-list{list-style:none;display:grid;gap:var(--space-4);margin-top:var(--space-5)}
+    .package-list li{display:flex;gap:var(--space-3);align-items:flex-start}
+    .badge{display:inline-flex;align-items:center;padding:.4rem .75rem;border-radius:999px;background:var(--color-primary-highlight);color:var(--color-primary);font-size:var(--text-xs);font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+    .contact-wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:var(--space-5)}
+    .contact-box,.form-box{background:var(--color-surface);padding:var(--space-8);border-radius:var(--radius-xl);border:1px solid color-mix(in srgb,var(--color-text) 10%, transparent)}
+    .contact-list{list-style:none;display:grid;gap:var(--space-4);margin-top:var(--space-5)}
+    form{display:grid;gap:var(--space-4)}
+    label{font-size:var(--text-sm);font-weight:600}
+    input,textarea,select{width:100%;margin-top:var(--space-2);padding:.9rem 1rem;border-radius:var(--radius-md);border:1px solid var(--color-border);background:var(--color-bg)}
+    textarea{min-height:130px;resize:vertical}
+    .footer{padding:var(--space-8) 0;border-top:1px solid color-mix(in srgb,var(--color-text) 10%, transparent)}
+    .footer-inner{display:flex;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap;color:var(--color-text-muted);font-size:var(--text-sm)}
+    .reveal{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}
+    @media (max-width: 900px){
+      .hero-grid,.grid-3,.packages,.contact-wrap{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr 1fr 1fr}
+      nav{display:none}
+    }
+    @media (max-width: 640px){
+      .stats{grid-template-columns:1fr}
+      .header-inner{align-items:flex-start}
+      h1{max-width:10ch}
+      .hero-card,.card,.package-panel,.contact-box,.form-box{padding:var(--space-6)}
+    }
+    @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="The All India Travels home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+            <path d="M4 16.5h16"></path><path d="M6 16.5l1-6a2 2 0 0 1 2-1.5h6a2 2 0 0 1 2 1.5l1 6"></path><circle cx="8" cy="17.5" r="1.5"></circle><circle cx="16" cy="17.5" r="1.5"></circle><path d="M9 9V6.5A2.5 2.5 0 0 1 11.5 4h1A2.5 2.5 0 0 1 15 6.5V9"></path>
+          </svg>
+        </span>
+        <span class="brand-name">The All India Travels<small>Taxi & Tours</small></span>
+      </a>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#why-us">Why us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Private cab bookings across Tamil Nadu & South India</p>
+          <h1>Comfortable road journeys for airport pickups, temple trips, and outstation travel.</h1>
+          <p>Launch-ready website for The All India Travels with service highlights, popular routes, enquiry form, and a clean design that works well on GitHub Pages with a custom GoDaddy domain.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Book your trip</a>
+            <a class="btn btn-secondary" href="#packages">View packages</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><span class="muted">Trip types</span><b>Airport</b></div>
+            <div class="stat"><span class="muted">Coverage</span><b>Outstation</b></div>
+            <div class="stat"><span class="muted">Support</span><b>24×7</b></div>
+          </div>
+        </div>
+        <aside class="hero-card reveal" aria-label="Popular routes and services">
+          <span class="badge">Popular routes</span>
+          <div class="route-list">
+            <div class="route-item"><div><strong>Chennai Airport</strong><span class="muted">Pickup and drop service</span></div><span>On request</span></div>
+            <div class="route-item"><div><strong>Tirupati</strong><span class="muted">One day and return packages</span></div><span>Daily</span></div>
+            <div class="route-item"><div><strong>Pondicherry</strong><span class="muted">Weekend cab bookings</span></div><span>Flexible</span></div>
+            <div class="route-item"><div><strong>Madurai / Rameswaram</strong><span class="muted">Temple and family tours</span></div><span>Custom</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <p class="eyebrow">Services</p>
+        <h2 style="font-size:var(--text-2xl);max-width:16ch;margin-top:var(--space-3);">Travel support built for families, solo riders, and business trips.</h2>
+        <div class="grid-3" style="margin-top:var(--space-8);">
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-8 9 8"></path><path d="M5 10v10h14V10"></path></svg>
+            </div>
+            <h3>Airport transfer</h3>
+            <p>Scheduled pickup and drop with direct driver coordination for Chennai and nearby airports.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h18"></path><path d="M6 6h12"></path><path d="M6 18h12"></path></svg>
+            </div>
+            <h3>Outstation cabs</h3>
+            <p>Point-to-point and multi-day travel for temple visits, hill station routes, and custom family plans.</p>
+          </article>
+          <article class="card reveal">
+            <div class="icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-6-4.35-6-10a6 6 0 0 1 12 0c0 5.65-6 10-6 10Z"></path><circle cx="12" cy="11" r="2.5"></circle></svg>
+            </div>
+            <h3>Tour planning</h3>
+            <p>Simple travel enquiry flow for route, date, passenger count, and pickup location from one contact form.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="packages" style="padding-top:0;">
+      <div class="container packages">
+        <div class="package-panel reveal">
+          <p class="eyebrow">Popular packages</p>
+          <h2 style="font-size:var(--text-2xl);margin-top:var(--space-3);">Start with ready itineraries, then customize the route.</h2>
+          <ul class="package-list">
+            <li><span class="badge">01</span><div><strong>Tirupati one-day package</strong><p class="muted">Pickup, temple visit route, and same-day return planning.</p></div></li>
+            <li><span class="badge">02</span><div><strong>Pondicherry coastal ride</strong><p class="muted">Day trip or overnight package for couples, friends, and small groups.</p></div></li>
+            <li><span class="badge">03</span><div><strong>Madurai and Rameswaram</strong><p class="muted">Long-distance family itinerary with flexible stopovers.</p></div></li>
+          </ul>
+        </div>
+        <div class="package-panel reveal">
+          <p class="eyebrow">Why us</p>
+          <h2 id="why-us" style="font-size:var(--text-2xl);margin-top:var(--space-3);">A practical site structure for trust and direct enquiries.</h2>
+          <ul class="package-list">
+            <li><span class="badge">Fast</span><div><strong>Mobile-first layout</strong><p class="muted">Easy to read and submit from phone, which is where most taxi enquiries happen.</p></div></li>
+            <li><span class="badge">Clean</span><div><strong>GitHub-ready</strong><p class="muted">Single HTML file works well on GitHub Pages with no backend required.</p></div></li>
+            <li><span class="badge">Simple</span><div><strong>GoDaddy-friendly</strong><p class="muted">You can point your domain by DNS after publishing the repository.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact-wrap">
+        <section class="contact-box reveal">
+          <p class="eyebrow">Contact</p>
+          <h2 style="font-size:var(--text-2xl);margin-top:var(--space-3);">Receive trip enquiries directly.</h2>
+          <p class="muted" style="margin-top:var(--space-4);">Replace the placeholder contact details below with your real phone number, WhatsApp link, email, and service area before publishing.</p>
+          <ul class="contact-list">
+            <li><strong>Phone</strong><div class="muted">+91 XXXXX XXXXX</div></li>
+            <li><strong>WhatsApp</strong><div class="muted">https://wa.me/91XXXXXXXXXX</div></li>
+            <li><strong>Email</strong><div class="muted">bookings@theallindiatravels.com</div></li>
+            <li><strong>Location</strong><div class="muted">Chennai, Tamil Nadu</div></li>
+          </ul>
+        </section>
+        <section class="form-box reveal" aria-labelledby="enquiry-heading">
+          <p class="eyebrow">Enquiry form</p>
+          <h2 id="enquiry-heading" style="font-size:var(--text-2xl);margin-top:var(--space-3);">Collect booking details.</h2>
+          <form onsubmit="event.preventDefault(); document.getElementById('form-status').textContent='Thanks — please connect this form to Formspree, Netlify Forms, or WhatsApp before going live.';">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your full name" required>
+            </div>
+            <div>
+              <label for="phone">Phone number</label>
+              <input id="phone" name="phone" type="tel" placeholder="+91" required>
+            </div>
+            <div>
+              <label for="trip">Trip type</label>
+              <select id="trip" name="trip">
+                <option>Airport transfer</option>
+                <option>Outstation ride</option>
+                <option>Temple tour</option>
+                <option>Custom package</option>
+              </select>
+            </div>
+            <div>
+              <label for="message">Trip details</label>
+              <textarea id="message" name="message" placeholder="Pickup, destination, date, passengers, and return requirement"></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Send enquiry</button>
+            <p id="form-status" class="muted" aria-live="polite"></p>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> The All India Travels. All rights reserved.</div>
+      <div>Built as a static site for GitHub Pages + GoDaddy custom domain.</div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      const toggle=document.querySelector('[data-theme-toggle]');
+      const root=document.documentElement;
+      let theme=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+      root.setAttribute('data-theme',theme);
+      const icon=()=>theme==='dark'
+        ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>'
+        : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>';
+      toggle.innerHTML=icon();
+      toggle.addEventListener('click',()=>{theme=theme==='dark'?'light':'dark';root.setAttribute('data-theme',theme);toggle.innerHTML=icon();});
+      document.getElementById('year').textContent=new Date().getFullYear();
+      const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting) entry.target.classList.add('visible');});},{threshold:.15});
+      document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+    })();
+  </script>
+</body>
+</html>
