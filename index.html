@@ -124,6 +124,12 @@
     .footer-inner{display:flex;justify-content:space-between;gap:var(--space-4);flex-wrap:wrap;color:var(--color-text-muted);font-size:var(--text-sm)}
     .reveal{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease}
     .reveal.visible{opacity:1;transform:none}
+
+    .rating-card{background:var(--color-surface);padding:var(--space-8);border-radius:var(--radius-xl);border:1px solid color-mix(in srgb,var(--color-text) 10%, transparent);margin-top:var(--space-6);text-align:center}
+    .rating-stars{display:flex;justify-content:center;gap:var(--space-2);margin:var(--space-4) 0 var(--space-5);flex-wrap:wrap}
+    .rating-star{width:48px;height:48px;border-radius:14px;background:#ff7a00;color:white;display:grid;place-items:center;font-size:1.5rem;line-height:1}
+    .rating-note{max-width:36ch;margin:0 auto;color:var(--color-text-muted)}
+
     @media (max-width: 900px){
       .hero-grid,.grid-3,.packages,.contact-wrap{grid-template-columns:1fr}
       .stats{grid-template-columns:1fr 1fr 1fr}
@@ -274,6 +280,21 @@
               <div class="muted">Chennai, Tamil Nadu</div>
             </li>
           </ul>
+          <div class="rating-card reveal">
+            <p class="eyebrow">Justdial rating</p>
+            <h3 style="font-size:var(--text-xl);margin-top:var(--space-3);">Rate us on Justdial</h3>
+            <div class="rating-stars" aria-hidden="true">
+              <span class="rating-star">★</span>
+              <span class="rating-star">★</span>
+              <span class="rating-star">★</span>
+              <span class="rating-star">★</span>
+              <span class="rating-star">★</span>
+            </div>
+            <p class="rating-note">Please support The All India Travels with your review on Justdial.</p>
+            <div style="margin-top:var(--space-5);display:flex;justify-content:center;">
+              <img src="PHOTO-2026-06-25-16-54-23.jpg" alt="Justdial rating QR for The All India Travels" style="width:min(100%,280px);border-radius:var(--radius-lg);border:1px solid var(--color-border);background:#fff;padding:var(--space-3);">
+            </div>
+          </div>
         </section>
         <section class="form-box reveal" aria-labelledby="enquiry-heading">
           <p class="eyebrow">Enquiry form</p>
