@@ -26,7 +26,7 @@
     <title>Taxi Service in Chennai | The All India Travels</title>
 
     <!-- Meta Description -->
-    <meta name="description" content="Book 24/7 taxi service in Chennai, Puducherry, Kanchipuram & nearby areas. Reliable outstation cabs & airport transfers. Call 095660 66250 or 097103 75593 today!">
+    <meta name="description" content="Book 24/7 taxi service in Chennai, Puducherry, Kanchipuram & nearby areas. Reliable one-way, round-trip & airport cabs with transparent pricing. Call 095660 66250 today!">
 
     <!-- Robots Meta Tag -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -42,7 +42,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <!-- Preload Hero Background Image from GBP -->
+    <!-- Preload Hero Background Image -->
     <link 
       rel="preload" 
       as="image" 
@@ -52,7 +52,7 @@
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="The All India Travels - Best Taxi & Outstation Cab Service">
-    <meta property="og:description" content="Safe, reliable, and affordable 24/7 taxi service across Chennai, Puducherry, Thiruvallur, Kanchipuram, and Chengalpattu.">
+    <meta property="og:description" content="Safe, reliable, and affordable 24/7 taxi service across Chennai, Puducherry, Thiruvallur, Kanchipuram, and Chengalpattu. Instant booking via WhatsApp.">
     <meta property="og:url" content="https://theallindiatravels.com/">
     <meta property="og:type" content="website">
 
@@ -100,12 +100,13 @@
         :root {
             --primary-color: #ffb400;
             --primary-dark: #e09e00;
-            --secondary-color: #25D366; /* Bright WhatsApp Green for contrast */
+            --secondary-color: #25D366; /* WhatsApp Green */
             --secondary-dark: #1da851;
-            --dark-color: #0f172a; /* Premium Dark Slate */
+            --dark-color: #0f172a; /* Slate Black */
             --light-color: #f8fafc;
             --text-color: #334155;
             --border-radius: 8px;
+            --card-shadow: 0 4px 12px rgba(0,0,0,0.06);
         }
 
         * {
@@ -120,9 +121,27 @@
             color: var(--text-color);
             background-color: var(--light-color);
             line-height: 1.6;
+            padding-bottom: 60px;
         }
 
-        /* Attractive Dark Header Styling */
+        @media (min-width: 769px) {
+            body {
+                padding-bottom: 0;
+            }
+        }
+
+        /* Top Announcement Bar */
+        .promo-bar {
+            background-color: #1e293b;
+            color: var(--primary-color);
+            text-align: center;
+            padding: 6px 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        /* Header Styling */
         header {
             position: sticky;
             top: 0;
@@ -134,6 +153,12 @@
             padding: 12px 5%;
             box-shadow: 0 4px 20px rgba(0,0,0,0.3);
             z-index: 1000;
+            transition: padding 0.3s ease, background-color 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 8px 5%;
+            background-color: #090d16;
         }
 
         .logo {
@@ -151,15 +176,14 @@
         }
 
         .logo h1 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: #ffffff;
             font-weight: 700;
-            letter-spacing: 0.5px;
         }
 
         nav {
             display: flex;
-            gap: 22px;
+            gap: 20px;
         }
 
         nav a {
@@ -178,7 +202,6 @@
             display: flex;
             gap: 10px;
             align-items: center;
-            flex-wrap: wrap;
         }
 
         .btn-call, .whatsapp-btn {
@@ -208,12 +231,13 @@
             color: #0f172a !important;
         }
 
+        /* Hero Section */
         .hero-container {
             display: flex;
             flex-wrap: wrap;
-            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('https://lh3.googleusercontent.com/z9w6NQAnkViqZ4PS1kE7wCBuX_kCwVC1uPhrQnKhYFn7Dj3pLnmQKX9YrMn1qAcQCvvA9vLff3Q7blo=s0') center/cover no-repeat;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://lh3.googleusercontent.com/z9w6NQAnkViqZ4PS1kE7wCBuX_kCwVC1uPhrQnKhYFn7Dj3pLnmQKX9YrMn1qAcQCvvA9vLff3Q7blo=s0') center/cover no-repeat;
             color: white;
-            padding: 60px 5%;
+            padding: 50px 5%;
             align-items: center;
             gap: 40px;
         }
@@ -223,19 +247,45 @@
             min-width: 300px;
         }
 
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 180, 0, 0.2);
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
         .hero-text h2 {
             font-size: 2.5rem;
             margin-bottom: 15px;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .hero-text h2 span {
             color: var(--primary-color);
         }
 
-        .hero-text p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
+        .hero-features {
+            list-style: none;
+            margin-top: 15px;
         }
 
+        .hero-features li {
+            margin-bottom: 8px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Quick Booking Card */
         .booking-card {
-            flex: 0 0 360px;
+            flex: 0 0 380px;
             background: #ffffff;
             color: var(--text-color);
             padding: 25px;
@@ -244,20 +294,28 @@
         }
 
         .booking-card h3 {
-            margin-bottom: 15px;
+            margin-bottom: 5px;
             color: var(--dark-color);
             text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .booking-sub {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 15px;
         }
 
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .form-group label {
             display: block;
             font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         .form-group input, .form-group select {
@@ -266,11 +324,13 @@
             border: 1px solid #cbd5e1;
             border-radius: 4px;
             font-size: 0.9rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
 
         .form-group input:focus, .form-group select:focus {
-            outline: 2px solid var(--primary-color);
-            border-color: transparent;
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 180, 0, 0.3);
         }
 
         .btn-submit {
@@ -283,7 +343,7 @@
             font-weight: bold;
             font-size: 1rem;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.1s;
         }
 
         .btn-submit:hover {
@@ -291,13 +351,143 @@
             color: white !important;
         }
 
+        /* Tariff / Fare Section (Inspired by White Taxi Tariff Grid) */
+        .tariff-section {
+            padding: 50px 5%;
+            background: #ffffff;
+        }
+
         .section-title {
             text-align: center;
             font-size: 2rem;
-            margin: 40px 0 20px;
+            margin-bottom: 8px;
             color: var(--dark-color);
         }
 
+        .section-subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 35px;
+            font-size: 0.95rem;
+        }
+
+        .tariff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 25px;
+        }
+
+        .tariff-card {
+            border: 1px solid #e2e8f0;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            background: #f8fafc;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .tariff-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .tariff-card.featured {
+            border: 2px solid var(--primary-color);
+            background: #ffffff;
+        }
+
+        .badge-popular {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--primary-color);
+            color: var(--dark-color);
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 3px 10px;
+            border-radius: 12px;
+        }
+
+        .tariff-card h3 {
+            color: var(--dark-color);
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .tariff-card .tag {
+            font-size: 0.8rem;
+            color: #64748b;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .fare-list {
+            margin: 20px 0;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .fare-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .fare-row span.price {
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        .tariff-notes {
+            font-size: 0.8rem;
+            color: #64748b;
+            list-style: none;
+            padding-top: 10px;
+            border-top: 1px dashed #cbd5e1;
+        }
+
+        .tariff-notes li {
+            margin-bottom: 4px;
+        }
+
+        /* How It Works Section */
+        .process-section {
+            padding: 50px 5%;
+            background: var(--light-color);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .process-step {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--card-shadow);
+        }
+
+        .step-num {
+            width: 45px;
+            height: 45px;
+            background: var(--primary-color);
+            color: var(--dark-color);
+            font-weight: bold;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.2rem;
+        }
+
+        /* General Card & Content Styling */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -309,7 +499,7 @@
             background: white;
             padding: 25px;
             border-radius: var(--border-radius);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            box-shadow: var(--card-shadow);
             border-top: 4px solid var(--primary-color);
             display: flex;
             flex-direction: column;
@@ -334,7 +524,7 @@
             padding: 40px 5%;
             margin: 20px 5% 40px;
             border-radius: var(--border-radius);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: var(--card-shadow);
         }
 
         .content-section h2, .content-section h3 {
@@ -374,17 +564,60 @@
             text-decoration: underline;
         }
 
+        /* Mobile Bottom Floating Action Bar */
+        .mobile-bottom-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--dark-color);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+            padding: 8px 12px;
+        }
+
+        .mobile-bottom-bar .bar-container {
+            display: flex;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
+        .mobile-bottom-bar a {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9rem;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .mobile-bottom-bar .bar-call {
+            background-color: var(--primary-color);
+            color: #0f172a;
+        }
+
+        .mobile-bottom-bar .bar-wa {
+            background-color: var(--secondary-color);
+            color: #0f172a;
+        }
+
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                gap: 15px;
+                gap: 12px;
                 text-align: center;
             }
 
             nav {
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 15px;
+                gap: 12px;
             }
 
             .hero-text h2 {
@@ -395,6 +628,10 @@
                 width: 100%;
                 flex: 1;
             }
+
+            .mobile-bottom-bar {
+                display: block;
+            }
         }
     </style>
 </head>
@@ -404,22 +641,26 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <!-- Top Announcement Bar -->
+    <div class="promo-bar">
+        ⚡ Limited-Time Offer: Instant 5–10% Discount on Outstation Routes via WhatsApp!
+    </div>
+
     <!-- Header Section -->
-    <header>
+    <header id="siteHeader">
         <div class="logo">
             <img src="https://lh3.googleusercontent.com/a-/ALV-UjXZBczWKiy-YB96jl3CxWh4d_dFjGp8Q8B-TrnYLXIHAPvYTQ" alt="The All India Travels Logo" width="48" height="48">
             <h1>The All India Travels</h1>
         </div>
-        <nav aria-label="Main Navigation">
+        <nav aria-label="Main Navigation" id="mainNav">
+            <a href="#tariff">Tariff</a>
             <a href="#services">Services</a>
             <a href="#fleet">Fleet</a>
-            <a href="#booking">Book Now</a>
+            <a href="#how-it-works">How It Works</a>
             <a href="#about">About Us</a>
-            <a href="#contact">Contact</a>
         </nav>
         <div class="header-cta">
             <a href="tel:09566066250" class="btn-call" aria-label="Call 095660 66250">📞 095660 66250</a>
-            <a href="tel:09710375593" class="btn-call" aria-label="Call 097103 75593">📞 097103 75593</a>
             <a href="https://wa.me/919566066250" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">💬 WhatsApp</a>
         </div>
     </header>
@@ -428,49 +669,174 @@
         <!-- Hero Section with Booking Form -->
         <section class="hero-container" id="booking">
             <div class="hero-text">
-                <h2>Reliable Taxi Service & Outstation Cabs</h2>
-                <p>24/7 Safe, Comfortable & Affordable Rides across Chennai, Puducherry, Thiruvallur, Kanchipuram, and Chengalpattu.</p>
+                <span class="hero-badge">Trusted Outstation & City Cabs</span>
+                <h2>Reliable Taxi Service for <span>One-Way & Round Trips</span></h2>
+                <p>Clean vehicles, verified drivers, transparent billing, and 24/7 instant booking across Chennai, Puducherry, Thiruvallur, Kanchipuram, and Chengalpattu.</p>
+                
+                <ul class="hero-features">
+                    <li>✓ No Surge Pricing & Fixed Quotes</li>
+                    <li>✓ Clean & Well-Maintained AC Fleet</li>
+                    <li>✓ Instant Booking Confirmation via WhatsApp</li>
+                </ul>
             </div>
 
             <div class="booking-card">
                 <h3>Quick Cab Booking</h3>
+                <p class="booking-sub">Get instant fare details on WhatsApp</p>
                 <form id="cabBookingForm" onsubmit="handleBooking(event)">
                     <div class="form-group">
                         <label for="tripType">Trip Type</label>
                         <select id="tripType" name="tripType" required>
-                            <option value="One Way Drop">One Way Drop</option>
+                            <option value="One Way Drop">One-Way Drop</option>
                             <option value="Outstation Round Trip">Outstation Round Trip</option>
-                            <option value="Airport Transfer">Airport Transfer</option>
-                            <option value="Local Hourly Rental">Local Hourly Rental</option>
+                            <option value="Airport Transfer">Airport Pickup / Drop</option>
+                            <option value="Local Rental">Local Hourly Rental</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="pickup">Pickup Location</label>
-                        <input type="text" id="pickup" name="pickup" placeholder="e.g. Velachery / Puducherry" required>
+                        <input type="text" id="pickup" name="pickup" placeholder="e.g. Chennai / Velachery" required>
                     </div>
                     <div class="form-group">
                         <label for="drop">Drop Location</label>
-                        <input type="text" id="drop" name="drop" placeholder="e.g. Kanchipuram / Airport" required>
+                        <input type="text" id="drop" name="drop" placeholder="e.g. Puducherry / Airport" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
+                        <label for="phone">Mobile Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
                     </div>
-                    <button type="submit" class="btn-submit">Book via WhatsApp</button>
+                    <button type="submit" class="btn-submit">Get Quote on WhatsApp</button>
                 </form>
             </div>
         </section>
 
+        <!-- Transparent Tariff Section (White Taxi Inspired) -->
+        <section class="tariff-section" id="tariff">
+            <h2 class="section-title">Transparent Fare Rates</h2>
+            <p class="section-subtitle">No surge prices or hidden fees. Standard starting fares for popular rides:</p>
+
+            <div class="tariff-grid">
+                <!-- One Way Card -->
+                <article class="tariff-card featured">
+                    <span class="badge-popular">Most Popular</span>
+                    <span class="tag">Outstation</span>
+                    <h3>ONE-WAY DROP</h3>
+                    <p style="font-size: 0.85rem; color:#64748b;">Pay only for the distance traveled one way.</p>
+                    
+                    <div class="fare-list">
+                        <div class="fare-row">
+                            <span>Sedan (Dzire/Etios)</span>
+                            <span class="price">from ₹14 / km</span>
+                        </div>
+                        <div class="fare-row">
+                            <span>Family SUV (Ertiga)</span>
+                            <span class="price">from ₹19 / km</span>
+                        </div>
+                        <div class="fare-row">
+                            <span>Premium SUV (Innova)</span>
+                            <span class="price">from ₹24 / km</span>
+                        </div>
+                    </div>
+
+                    <ul class="tariff-notes">
+                        <li>• Minimum 130–150 km billing per day</li>
+                        <li>• Driver bata: ₹400–₹600 / day</li>
+                        <li>• Tolls & Parking as per actuals</li>
+                    </ul>
+                </article>
+
+                <!-- Round Trip Card -->
+                <article class="tariff-card">
+                    <span class="tag">Outstation</span>
+                    <h3>ROUND TRIP</h3>
+                    <p style="font-size: 0.85rem; color:#64748b;">Best value for weekend getaways and returns.</p>
+
+                    <div class="fare-list">
+                        <div class="fare-row">
+                            <span>Sedan (Dzire/Etios)</span>
+                            <span class="price">from ₹13 / km</span>
+                        </div>
+                        <div class="fare-row">
+                            <span>Family SUV (Ertiga)</span>
+                            <span class="price">from ₹18 / km</span>
+                        </div>
+                        <div class="fare-row">
+                            <span>Premium SUV (Innova)</span>
+                            <span class="price">from ₹21 / km</span>
+                        </div>
+                    </div>
+
+                    <ul class="tariff-notes">
+                        <li>• Minimum 250–300 km billing / day</li>
+                        <li>• Driver bata: ₹400–₹600 / day</li>
+                        <li>• Night halt charges if applicable</li>
+                    </ul>
+                </article>
+
+                <!-- Local & Airport Card -->
+                <article class="tariff-card">
+                    <span class="tag">In-City & Airport</span>
+                    <h3>LOCAL & AIRPORT</h3>
+                    <p style="font-size: 0.85rem; color:#64748b;">Ideal for city errands, meetings & transfers.</p>
+
+                    <div class="fare-list">
+                        <div class="fare-row">
+                            <span>4 Hours / 40 KM Package</span>
+                            <span class="price">from ₹1,199</span>
+                        </div>
+                        <div class="fare-row">
+                            <span>8 Hours / 80 KM Package</span>
+                            <span class="price">from ₹2,200</span>
+                        </div>
+                        <div class="fare-row">
+                            <span>Airport Pickup / Drop</span>
+                            <span class="price">from ₹799</span>
+                        </div>
+                    </div>
+
+                    <ul class="tariff-notes">
+                        <li>• Extra km & hours at standard rates</li>
+                        <li>• Tolls and airport parking as per actuals</li>
+                        <li>• 24/7 Service Available</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- How It Works Section (White Taxi Inspired) -->
+        <section class="process-section" id="how-it-works">
+            <h2 class="section-title">Simple, Transparent Booking</h2>
+            <p class="section-subtitle">3 steps to get on the road smoothly:</p>
+
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-num">1</div>
+                    <h3>Share Your Route</h3>
+                    <p>Submit your pickup, destination, and vehicle preference in our form or via WhatsApp.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">2</div>
+                    <h3>Get Fixed Quote</h3>
+                    <p>We send you an all-inclusive, fixed fare quote with no hidden driver fees or surprise charges.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">3</div>
+                    <h3>Ride with Peace</h3>
+                    <p>Enjoy a comfortable journey with verified, courteous chauffeurs and fully sanitized vehicles.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Services Section -->
-        <h2 class="section-title" id="services">Our Travel & Cab Services</h2>
+        <h2 class="section-title" id="services" style="margin-top: 40px;">Our Taxi & Travel Services</h2>
         <section class="grid-container">
             <article class="card">
-                <h3>🚖 One Way Drop Cabs</h3>
-                <p>Pay only for one-way journeys across Tamil Nadu and Puducherry with no return charges.</p>
+                <h3>🚖 One-Way Drop Cabs</h3>
+                <p>Pay only for one-way journeys across Tamil Nadu and Puducherry without paying return vehicle charges.</p>
             </article>
             <article class="card">
                 <h3>🛣️ Outstation Round Trips</h3>
-                <p>Hassle-free outstation cab rentals for vacations, family events, and pilgrimages.</p>
+                <p>Hassle-free outstation cab rentals designed for family vacations, business travel, and pilgrimages.</p>
             </article>
             <article class="card">
                 <h3>✈️ Airport Transfers</h3>
@@ -478,35 +844,35 @@
             </article>
             <article class="card">
                 <h3>🏙️ Local Hourly Rentals</h3>
-                <p>Flexible hourly packages for local city exploration and shopping trips.</p>
+                <p>Flexible hourly packages (4hrs/40km, 8hrs/80km) for shopping trips and local meetings.</p>
             </article>
             <article class="card">
-                <h3>💼 Corporate Travel</h3>
-                <p>Professional transportation solutions tailored for business executives.</p>
+                <h3>💼 Corporate Transportation</h3>
+                <p>Professional transportation solutions tailored for corporate executives and business trips.</p>
             </article>
             <article class="card">
-                <h3>🚘 Wedding & Luxury Cars</h3>
-                <p>Premium luxury vehicles to make your special occasions memorable.</p>
+                <h3>🚘 Event & Wedding Cars</h3>
+                <p>Spacious and luxury vehicles to make your family celebrations smooth and memorable.</p>
             </article>
         </section>
 
         <!-- Fleet Section -->
-        <h2 class="section-title" id="fleet">Available Vehicles</h2>
+        <h2 class="section-title" id="fleet">Our Fleet Options</h2>
         <section class="grid-container">
             <article class="card">
                 <img src="https://lh3.googleusercontent.com/JOZIhlyLC9wcTU5fb9bToztPlF5xQ0mcYZ_asNJf7JTAfV9MBGI8VfJIF7IsmHZE2B20Bhjg994M0WE=s0" alt="Sedan Taxi - Swift Dzire / Etios" loading="lazy" width="300" height="180">
                 <h3>Sedan (Swift Dzire / Etios)</h3>
-                <p>4 Seats | AC | Ideal for city travel and small family trips.</p>
+                <p>4 Seats | AC | Ideal for city travel, airport drops, and small family rides.</p>
             </article>
             <article class="card">
                 <img src="https://lh3.googleusercontent.com/gng99Q0oCjY9EOG7EMlcVEblYRtCo5bBU9e3RQa_C-22C9r4z9pyaHzv7RJYO22pOOtVXJiusIwHMLQ=s0" alt="Family SUV - Maruti Ertiga" loading="lazy" width="300" height="180">
                 <h3>Family SUV (Maruti Ertiga)</h3>
-                <p>6 Seats | Dual AC | Perfect for family travel and outstation drops.</p>
+                <p>6 Seats | Dual AC | Perfect for family travel and outstation long rides.</p>
             </article>
             <article class="card">
                 <img src="https://lh3.googleusercontent.com/z9w6NQAnkViqZ4PS1kE7wCBuX_kCwVC1uPhrQnKhYFn7Dj3pLnmQKX9YrMn1qAcQCvvA9vLff3Q7blo=s0" alt="Premium SUV - Innova Crysta" loading="lazy" width="300" height="180">
                 <h3>Premium SUV (Innova Crysta)</h3>
-                <p>7 Seats | Spacious & Premium comfort for long-distance travel.</p>
+                <p>7 Seats | Spacious & Premium comfort for luxury long-distance travel.</p>
             </article>
         </section>
 
@@ -518,9 +884,8 @@
                     Looking for a hassle-free, affordable, and safe taxi service in Chennai? 
                     <strong>The All India Travels</strong> provides round-the-clock cab bookings tailored for 
                     local commutes, outstation travel, airport pickups, and family celebrations. 
-                    Whether you are planning a sudden outstation getaway to Puducherry, require a timely 
-                    drop at Chennai International Airport, or need luxury vehicles for weddings, our extensive fleet 
-                    is ready to serve you.
+                    Whether you are planning a sudden getaway to Puducherry, require a timely drop at Chennai 
+                    International Airport, or need luxury vehicles, our extensive fleet is ready to serve you.
                 </p>
 
                 <h3>Transparent Pricing & Professional Drivers</h3>
@@ -530,13 +895,6 @@
                     saving up to 50% on outstation travel costs across Tamil Nadu, Puducherry, Thiruvallur, 
                     Kanchipuram, and Chengalpattu. All our drivers are professionally trained, background-checked, 
                     and well-versed with optimal routes to guarantee a safe and comfortable trip every time.
-                </p>
-
-                <h3>Seamless Instant Booking</h3>
-                <p>
-                    Booking a ride with us is quick and simple. Choose from compact sedans like Swift Dzire and 
-                    Etios for short city rides, or spacious SUVs like Maruti Ertiga and Innova Crysta for group 
-                    travel. Contact our 24/7 customer support team to confirm your booking instantly!
                 </p>
             </article>
         </section>
@@ -552,8 +910,17 @@
         <p style="margin-top:20px; font-size:0.85rem; color: #94a3b8;">&copy; The All India Travels. All Rights Reserved.</p>
     </footer>
 
-    <!-- Interactive JavaScript -->
+    <!-- Mobile Sticky Call/WhatsApp Bar -->
+    <div class="mobile-bottom-bar" aria-label="Quick Actions">
+        <div class="bar-container">
+            <a href="tel:09566066250" class="bar-call">📞 Call Now</a>
+            <a href="https://wa.me/919566066250" class="bar-wa" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- JavaScript Handling -->
     <script>
+        // WhatsApp Booking Form Handler
         function handleBooking(event) {
             event.preventDefault();
 
@@ -562,15 +929,25 @@
             const drop = document.getElementById('drop').value;
             const phone = document.getElementById('phone').value;
 
-            const whatsappMessage = `Hello The All India Travels, I would like to book a cab:%0A%0A` +
+            const whatsappMessage = `Hello The All India Travels, I would like to check availability & fare quote:%0A%0A` +
                 `*Trip Type:* ${encodeURIComponent(tripType)}%0A` +
                 `*Pickup Location:* ${encodeURIComponent(pickup)}%0A` +
                 `*Drop Location:* ${encodeURIComponent(drop)}%0A` +
-                `*My Phone Number:* ${encodeURIComponent(phone)}`;
+                `*Phone Number:* ${encodeURIComponent(phone)}`;
 
             const whatsappURL = `https://wa.me/919566066250?text=${whatsappMessage}`;
             window.open(whatsappURL, '_blank');
         }
+
+        // Header Scroll Elevation
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('siteHeader');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
     </script>
 </body>
 </html>
