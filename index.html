@@ -1,394 +1,103 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The All India Travels </title>
-  <meta name="description" content="Premium taxi, airport transfer, outstation cab, and tour bookings from The All India Travels based in Chennai." />
-  <meta name="theme-color" content="#0f1117" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Service in Chennai | Outstation Cabs & Airport Transfers | The All India Travels</title>
+    <meta name="description" content="Book 24/7 taxi service in Chennai with The All India Travels. Low-cost outstation one-way drop cabs, airport transfers, corporate travel, and local rentals. Call 095660 66250.">
+    <meta name="keywords" content="taxi service chennai, outstation cabs chennai, one way drop taxi, airport taxi chennai, car rental velachery, corporate cab service chennai">
+    <link rel="canonical" href="https://theallindiatravels.com/" />
 
-  <!-- Open Graph / Social Media -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="The All India Travels - Premium Taxi & Tour Bookings" />
-  <meta property="og:description" content="Airport transfers, outstation cabs, and custom tour packages from Chennai with 24/7 support." />
-  <meta property="og:locale" content="en_IN" />
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="The All India Travels - Best Taxi & Outstation Cab Service in Chennai">
+    <meta property="og:description" content="Safe, reliable, and affordable 24/7 taxi service in Chennai for airport, local, and outstation trips.">
+    <meta property="og:url" content="https://theallindiatravels.com/">
+    <meta property="og:type" content="website">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#0f1117;
-      --surface:#151922;
-      --surface-2:#1b2230;
-      --surface-3:#202a3c;
-      --text:#f8f5ee;
-      --muted:#b9c0cc;
-      --faint:#8c96a7;
-      --primary:#f59b23;
-      --primary-2:#ffbe63;
-      --accent:#13a3b8;
-      --accent-2:#87d5df;
-      --border:rgba(255,255,255,.12);
-      --shadow:0 18px 60px rgba(0,0,0,.34);
-      --radius-sm:12px;
-      --radius-md:18px;
-      --radius-lg:28px;
-      --content:1200px;
+    <!-- JSON-LD Structured Data Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TaxiService",
+      "name": "The All India Travels",
+      "url": "https://theallindiatravels.com/",
+      "telephone": "+91-9566066250",
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "214 Sai Balaji Nagar, 4th Part, 8th Cross Street",
+        "addressLocality": "Chennai",
+        "addressRegion": "Tamil Nadu",
+        "postalCode": "600100",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 12.9308423,
+        "longitude": 80.2128461
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "areaServed": [
+        "Chennai", "Velachery", "Tambaram", "Pallavaram", 
+        "Medavakkam", "Sholinganallur", "Puducherry", "Tirupati"
+      ]
     }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth;-webkit-text-size-adjust:none;text-size-adjust:none}
-    body{font-family:'Inter',sans-serif;background:linear-gradient(180deg,#0b0e14,#101623 45%,#0d1119);color:var(--text);line-height:1.6}
-    img,svg{display:block;max-width:100%;height:auto}
-    a{text-decoration:none;color:inherit}
-    button,input,textarea,select{font:inherit;color:inherit}
-    button{cursor:pointer;border:none;background:none}
-    .container{width:min(calc(100% - 32px),var(--content));margin-inline:auto}
-    .skip-link{position:absolute;left:-9999px;top:auto}
-    .skip-link:focus{left:16px;top:16px;background:var(--primary);color:#111;padding:12px 16px;border-radius:12px;z-index:1000}
-    .topbar{background:#0a0d14;border-bottom:1px solid rgba(255,255,255,.08)}
-    .topbar-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:10px 0;font-size:.92rem;color:var(--muted)}
-    .topbar a{color:var(--accent-2)}
-    .site-header{position:sticky;top:0;z-index:40;background:rgba(11,14,20,.78);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.08)}
-    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0}
-    .brand{display:flex;align-items:center;gap:14px}
-    .brand-mark{width:54px;height:54px;border-radius:16px;background:linear-gradient(145deg,var(--primary),#ff7a00);display:grid;place-items:center;color:#101216;box-shadow:0 10px 30px rgba(245,155,35,.32)}
-    .brand-text{display:flex;flex-direction:column;line-height:1.05}
-    .brand-text strong{font-size:1.05rem;letter-spacing:.03em}
-    .brand-text span{font-size:.78rem;text-transform:uppercase;letter-spacing:.18em;color:var(--accent-2)}
-    nav ul{display:flex;list-style:none;gap:26px;align-items:center}
-    nav a{color:var(--muted);font-weight:500}
-    nav a:hover{color:#fff}
-    .header-actions{display:flex;align-items:center;gap:12px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;font-weight:700;transition:.2s ease}
-    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#14110c;box-shadow:0 14px 38px rgba(245,155,35,.28)}
-    .btn-primary:hover{transform:translateY(-1px)}
-    .btn-outline{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);color:#fff}
-    .hero{position:relative;overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(19,163,184,.22),transparent 30%),radial-gradient(circle at left center,rgba(245,155,35,.16),transparent 35%);pointer-events:none}
-    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;padding:84px 0 56px;position:relative}
-    .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;background:rgba(19,163,184,.12);border:1px solid rgba(19,163,184,.28);color:var(--accent-2);font-size:.84rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em}
-    h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.05}
-    h1{font-size:clamp(2.8rem,5vw,5.8rem);margin-top:22px;max-width:11ch}
-    .hero-copy p{margin-top:20px;max-width:60ch;color:var(--muted);font-size:1.06rem}
-    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
-    .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
-    .hero-stat{padding:18px 18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:18px}
-    .hero-stat small{display:block;color:var(--faint);font-size:.85rem;text-transform:uppercase;letter-spacing:.14em}
-    .hero-stat strong{display:block;margin-top:8px;font-size:1.1rem}
-    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);border-radius:30px;padding:28px;box-shadow:var(--shadow)}
-    .hero-card-top{display:flex;justify-content:space-between;align-items:center;gap:16px}
-    .hero-card-top strong{font-size:1.15rem}
-    .pill{display:inline-flex;padding:8px 14px;border-radius:999px;background:rgba(245,155,35,.14);color:var(--primary-2);font-size:.84rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
-    .feature-stack{display:grid;gap:14px;margin-top:22px}
-    .feature-item{display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:20px;background:rgba(8,12,20,.38);border:1px solid rgba(255,255,255,.08)}
-    .feature-icon{width:46px;height:46px;border-radius:14px;background:linear-gradient(145deg,var(--accent),#0d7080);display:grid;place-items:center;color:#fff;flex:none}
-    .section{padding:74px 0}
-    .section-heading{display:flex;justify-content:space-between;gap:20px;align-items:end;flex-wrap:wrap;margin-bottom:28px}
-    .section-heading p{max-width:60ch;color:var(--muted)}
-    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    .card{background:linear-gradient(180deg,var(--surface),var(--surface-2));padding:26px;border-radius:28px;border:1px solid var(--border);box-shadow:var(--shadow)}
-    .card-icon{width:54px;height:54px;border-radius:16px;background:rgba(245,155,35,.14);color:var(--primary-2);display:grid;place-items:center}
-    .card h3{margin-top:16px;font-size:1.6rem}
-    .card p{margin-top:10px;color:var(--muted)}
-    .route-band{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
-    .route-panel,.trust-panel{background:linear-gradient(180deg,var(--surface),var(--surface-2));padding:28px;border-radius:30px;border:1px solid var(--border)}
-    .route-list{display:grid;gap:14px;margin-top:20px}
-    .route-row{display:flex;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-    .route-row:last-child{border-bottom:none;padding-bottom:0}
-    .route-row span{display:block;color:var(--muted)}
-    .badge-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-    .badge{padding:10px 14px;border-radius:999px;background:rgba(19,163,184,.12);border:1px solid rgba(19,163,184,.22);color:var(--accent-2);font-weight:600}
-    .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px}
-    .contact-card,.form-card{background:linear-gradient(180deg,var(--surface),var(--surface-2));padding:30px;border-radius:30px;border:1px solid var(--border)}
-    .contact-list{list-style:none;display:grid;gap:18px;margin-top:24px}
-    .contact-list strong{display:block;margin-bottom:4px;font-size:1rem}
-    .contact-list a{color:var(--accent-2);font-weight:600;word-break:break-word}
-    .contact-list a:hover{text-decoration:underline}
-    .rating-box{margin-top:28px;padding:22px;border-radius:24px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);text-align:center}
-    .stars{display:flex;justify-content:center;gap:10px;margin:16px 0 18px;flex-wrap:wrap}
-    .star{width:44px;height:44px;border-radius:14px;background:#ff7a00;color:#fff;display:grid;place-items:center;font-size:1.35rem}
-    form{display:grid;gap:18px;margin-top:22px}
-    label{display:block;font-size:.95rem;font-weight:700;margin-bottom:8px}
-    input,textarea,select{width:100%;padding:15px 16px;border-radius:16px;border:1px solid rgba(255,255,255,.12);background:#0f131c;color:#fff;outline:none}
-    input:focus,textarea:focus,select:focus{border-color:rgba(19,163,184,.65);box-shadow:0 0 0 4px rgba(19,163,184,.15)}
-    textarea{min-height:130px;resize:vertical}
-    .form-note{color:var(--muted);font-size:.95rem}
-    .footer{padding:32px 0;border-top:1px solid rgba(255,255,255,.08);background:#0a0d14}
-    .footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted)}
-    @media (max-width: 1080px){
-      nav{display:none}
-      .hero-grid,.route-band,.contact-grid{grid-template-columns:1fr}
-      .service-grid{grid-template-columns:repeat(2,1fr)}
-    }
-    @media (max-width: 720px){
-      .topbar-inner,.header-inner,.section-heading,.footer-inner{flex-direction:column;align-items:flex-start}
-      .hero-stats,.service-grid{grid-template-columns:1fr}
-      .hero-actions{flex-direction:column;align-items:stretch}
-      .btn{width:100%}
-      .hero-grid{padding-top:58px}
-      .brand-mark{width:48px;height:48px}
-      .card,.route-panel,.trust-panel,.contact-card,.form-card,.hero-card{padding:22px}
-      h1{max-width:10ch}
-    }
-  </style>
-
-  <!-- Schema.org Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "TaxiService",
-    "name": "The All India Travels",
-    "description": "Premium taxi, airport transfer, outstation cab, and tour bookings in Chennai.",
-    "telephone": "+919566066250",
-    "email": "theallindiatravels@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "214, 8th Cross St, Sai Balaji Nagar, Pallikaranai",
-      "addressLocality": "Chennai",
-      "addressRegion": "Tamil Nadu",
-      "postalCode": "600100",
-      "addressCountry": "IN"
-    },
-    "areaServed": "South India",
-    "openingHours": "Mo-Su 00:00-23:59"
-  }
-  </script>
+    </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <div>Premium taxi service from Chennai for airport transfers, outstation trips, and family tours.</div>
-      <div><a href="tel:+919566066250">Call: +91 95660 66250</a> · <a href="https://wa.me/919566066250" target="_blank" rel="noopener noreferrer">WhatsApp booking</a></div>
-    </div>
-  </div>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="The All India Travels home">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-            <path d="M4 16.5h16"></path>
-            <path d="M6 16.5l1-6a2 2 0 0 1 2-1.5h6a2 2 0 0 1 2 1.5l1 6"></path>
-            <circle cx="8" cy="17.5" r="1.5"></circle>
-            <circle cx="16" cy="17.5" r="1.5"></circle>
-            <path d="M9 9V6.5A2.5 2.5 0 0 1 11.5 4h1A2.5 2.5 0 0 1 15 6.5V9"></path>
-          </svg>
-        </span>
-        <span class="brand-text">
-          <strong>The All India Travels</strong>
-          <span>AnyTime AnyWhere</span>
-        </span>
-      </a>
-      <nav aria-label="Primary">
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>The All India Travels</h1>
+        </div>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#fleet">Fleet</a>
+            <a href="#routes">Routes</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-cta">
+            <a href="tel:09566066250">📞 Call 095660 66250</a>
+            <a href="https://wa.me/919566066250" class="whatsapp-btn">💬 WhatsApp Booking</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Reliable Taxi Service & Outstation Cabs in Chennai</h2>
+        <p>24/7 Safe, Comfortable & Affordable Rides | One-Way Drop Cabs, Airport Pickup/Drop, Local City Rentals & Corporate Travel</p>
+        <div class="cta-buttons">
+            <a href="tel:09566066250" class="btn-primary">Call Now to Book</a>
+            <a href="https://wa.me/919566066250" class="btn-secondary">WhatsApp Quick Booking</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Travel & Cab Services</h2>
         <ul>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#routes">Routes</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#contact">Contact</a></li>
+            <li><strong>One Way Drop Cabs:</strong> Pay only for one-way journeys across Tamil Nadu.</li>
+            <li><strong>Outstation Round Trips:</strong> Hassle-free vacation and pilgrimage packages.</li>
+            <li><strong>Airport Transfers:</strong> On-time 24/7 pickup and drop-off at Chennai Airport.</li>
+            <li><strong>Local Hourly Rentals:</strong> Flexible 4hr/40km or 8hr/80km city rental packages.</li>
+            <li><strong>Corporate Executive Travel:</strong> Premium transportation solutions for businesses.</li>
+            <li><strong>Wedding & Luxury Cars:</strong> Luxury cars to elevate your special day.</li>
         </ul>
-      </nav>
-      <div class="header-actions">
-        <a class="btn btn-outline" href="https://wa.me/919566066250" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        <a class="btn btn-primary" href="#contact">Book now</a>
-      </div>
-    </div>
-  </header>
-  <main id="main">
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Trusted travel partner from Chennai</span>
-          <h1>Premium cab and tour bookings for every road journey.</h1>
-          <p>The All India Travels offers airport pickups, outstation taxi service, family tour routes, and direct WhatsApp booking with fast response for customers across Chennai and nearby areas.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Book your trip</a>
-            <a class="btn btn-outline" href="https://wa.me/919566066250" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
-          </div>
-          <div class="hero-stats">
-            <div class="hero-stat"><small>Service type</small><strong>Airport & Outstation</strong></div>
-            <div class="hero-stat"><small>Availability</small><strong>24×7 Support</strong></div>
-            <div class="hero-stat"><small>Coverage</small><strong>Tamil Nadu & South India</strong></div>
-          </div>
-        </div>
-        <aside class="hero-card">
-          <div class="hero-card-top">
-            <div>
-              <strong>Popular travel bookings</strong>
-              <p style="color:var(--muted);margin-top:6px;">Flexible routes for temple trips, airport pickup, and long-distance rides.</p>
-            </div>
-            <span class="pill">Fast response</span>
-          </div>
-          <div class="feature-stack">
-            <div class="feature-item">
-              <div class="feature-icon" aria-hidden="true">✈</div>
-              <div><strong>Chennai Airport Transfer</strong><p style="color:var(--muted);margin-top:6px;">Pickup and drop with direct driver coordination.</p></div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon" aria-hidden="true">⛩</div>
-              <div><strong>Tirupati & Temple Trips</strong><p style="color:var(--muted);margin-top:6px;">Same-day and return packages for families and groups.</p></div>
-            </div>
-            <div class="feature-item">
-              <div class="feature-icon" aria-hidden="true">🚕</div>
-              <div><strong>Outstation Cab Service</strong><p style="color:var(--muted);margin-top:6px;">Pondicherry, Madurai, Rameswaram, and custom plans.</p></div>
-            </div>
-          </div>
-        </aside>
-      </div>
     </section>
-    <section class="section" id="services">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <span class="eyebrow">Our services</span>
-            <h2 style="font-size:clamp(2rem,4vw,3.6rem);margin-top:18px;">Travel solutions designed for comfort, speed, and trust.</h2>
-          </div>
-          <p>We focus on practical bookings that people use most: airport transfers, outstation rides, local city travel, and tour planning with direct customer communication.</p>
-        </div>
-        <div class="service-grid">
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">✈</div>
-            <h3>Airport transfer</h3>
-            <p>Scheduled pickup and drop service for Chennai airport with easy phone and WhatsApp coordination.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">🛣</div>
-            <h3>Outstation cabs</h3>
-            <p>One-way, round-trip, and multi-day cab bookings for personal, family, and business travel.</p>
-          </article>
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">🧭</div>
-            <h3>Tour packages</h3>
-            <p>Temple routes, weekend trips, and customizable South India plans built around your schedule.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-    <section class="section" id="routes" style="padding-top:0;">
-      <div class="container route-band">
-        <div class="route-panel">
-          <span class="eyebrow">Top routes</span>
-          <h2 style="font-size:clamp(2rem,4vw,3.2rem);margin-top:18px;">Popular bookings customers ask for most.</h2>
-          <div class="route-list">
-            <div class="route-row"><div><strong>Chennai Airport</strong><span>Direct pickup and drop</span></div><strong>Daily</strong></div>
-            <div class="route-row"><div><strong>Tirupati</strong><span>One-day and return package</span></div><strong>Popular</strong></div>
-            <div class="route-row"><div><strong>Pondicherry</strong><span>Coastal day trip and overnight ride</span></div><strong>Flexible</strong></div>
-            <div class="route-row"><div><strong>Madurai / Rameswaram</strong><span>Custom family and pilgrimage route</span></div><strong>Custom</strong></div>
-          </div>
-        </div>
-        <div class="trust-panel" id="reviews">
-          <span class="eyebrow">Why choose us</span>
-          <h2 style="font-size:clamp(2rem,4vw,3.2rem);margin-top:18px;">Direct booking, fast reply, and reliable service support.</h2>
-          <div class="badge-row">
-            <span class="badge">24×7 enquiry support</span>
-            <span class="badge">WhatsApp booking</span>
-            <span class="badge">Family-friendly rides</span>
-            <span class="badge">Custom route planning</span>
-          </div>
-          <div class="rating-box">
-            <p class="eyebrow" style="justify-content:center;">Justdial rating</p>
-            <div class="stars" aria-label="5 out of 5 stars rating">
-              <span class="star" aria-hidden="true">★</span>
-              <span class="star" aria-hidden="true">★</span>
-              <span class="star" aria-hidden="true">★</span>
-              <span class="star" aria-hidden="true">★</span>
-              <span class="star" aria-hidden="true">★</span>
-            </div>
-            <p style="color:var(--muted);margin-bottom:18px;">Share your experience and support The All India Travels on Justdial.</p>
-            <a class="btn btn-primary" href="https://jsdl.in/RSL-OTC1785735437" target="_blank" rel="noopener noreferrer">Rate us on Justdial</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section" id="contact">
-      <div class="container contact-grid">
-        <section class="contact-card">
-          <span class="eyebrow">Contact details</span>
-          <h2 style="font-size:clamp(2rem,4vw,3.2rem);margin-top:18px;">Book your ride directly with our team.</h2>
-          <ul class="contact-list">
-            <li>
-              <strong>Phone</strong>
-              <a href="tel:+919566066250">+91 95660 66250</a><br>
-              <a href="tel:+919710375593">+91 97103 75593</a>
-            </li>
-            <li>
-              <strong>WhatsApp</strong>
-              <a href="https://wa.me/919566066250" target="_blank" rel="noopener noreferrer">wa.me/919566066250</a><br>
-              <a href="https://wa.me/919710375593" target="_blank" rel="noopener noreferrer">wa.me/919710375593</a>
-            </li>
-            <li>
-              <strong>Email</strong>
-              <a href="mailto:theallindiatravels@gmail.com">theallindiatravels@gmail.com</a>
-            </li>
-            <li>
-              <strong>Location</strong>
-              <span style="color:var(--muted);">214, 8th Cross St, Sai Balaji Nagar, Pallikaranai, Chennai, Greater Chennai, Tamil Nadu 600100, India</span>
-            </li>
-          </ul>
-        </section>
-        <section class="form-card" aria-labelledby="enquiry-heading">
-          <span class="eyebrow">Instant enquiry</span>
-          <h2 id="enquiry-heading" style="font-size:clamp(2rem,4vw,3.2rem);margin-top:18px;">Send your trip details on WhatsApp.</h2>
-          <form id="whatsapp-form">
-            <div>
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" placeholder="Your full name" autocomplete="name" required>
-            </div>
-            <div>
-              <label for="phone">Phone number</label>
-              <input id="phone" name="phone" type="tel" placeholder="+91" autocomplete="tel" required>
-            </div>
-            <div>
-              <label for="trip">Trip type</label>
-              <select id="trip" name="trip">
-                <option>Airport transfer</option>
-                <option>Outstation ride</option>
-                <option>Temple tour</option>
-                <option>Custom package</option>
-              </select>
-            </div>
-            <div>
-              <label for="message">Trip details</label>
-              <textarea id="message" name="message" placeholder="Pickup, destination, date, passengers, and return requirement"></textarea>
-            </div>
-            <button class="btn btn-primary" type="submit">Send enquiry on WhatsApp</button>
-            <p id="form-status" class="form-note" aria-live="polite"></p>
-          </form>
-        </section>
-      </div>
-    </section>
-  </main>
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> The All India Travels. All rights reserved.</div>
-      <div>AnyTime AnyWhere</div>
-    </div>
-  </footer>
-  <script>
-    (function(){
-      document.getElementById('year').textContent = new Date().getFullYear();
-      const form = document.getElementById('whatsapp-form');
-      const formStatus = document.getElementById('form-status');
-      if(form){
-        form.addEventListener('submit', function(e){
-          e.preventDefault();
-          const name = document.getElementById('name').value.trim();
-          const phone = document.getElementById('phone').value.trim();
-          const trip = document.getElementById('trip').value;
-          const details = document.getElementById('message').value.trim();
-          const whatsappNumber = '919566066250';
-          const msg = 'New Travel Enquiry\n\n' +
-            'Name: ' + name + '\n' +
-            'Phone: ' + phone + '\n' +
-            'Trip Type: ' + trip + '\n' +
-            'Trip Details: ' + details;
-          if(formStatus){ formStatus.textContent = 'Opening WhatsApp...'; }
-          window.open('https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(msg), '_blank');
-        });
-      }
-    })();
-  </script>
+
+    <!-- Contact Section -->
+    <footer id="contact">
+        <h3>Contact The All India Travels</h3>
+        <p><strong>Address:</strong> 214 Sai Balaji Nagar, 4th Part, 8th Cross Street, Chennai, TN 600100</p>
+        <p><strong>Phone:</strong> <a href="tel:09566066250">095660 66250</a></p>
+        <p><strong>Hours:</strong> Open 24/7</p>
+    </footer>
+
 </body>
 </html>
