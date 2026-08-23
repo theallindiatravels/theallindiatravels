@@ -26,7 +26,7 @@
     <title>Taxi Service in Chennai | The All India Travels</title>
 
     <!-- Meta Description -->
-    <meta name="description" content="Book 24/7 taxi service in Chennai, Puducherry, Kanchipuram & nearby areas. Reliable outstation cabs & airport transfers. Call 095660 66250 today!">
+    <meta name="description" content="Book 24/7 taxi service in Chennai, Puducherry, Kanchipuram & nearby areas. Reliable outstation cabs & airport transfers. Call 095660 66250 or 097103 75593 today!">
 
     <!-- Robots Meta Tag -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -63,7 +63,8 @@
       "@type": "TaxiService",
       "name": "The All India Travels",
       "url": "https://theallindiatravels.com/",
-      "telephone": "+91-9566066250",
+      "telephone": ["+91-9566066250", "+91-9710375593"],
+      "email": "theallindiatravels@gmail.com",
       "priceRange": "₹₹",
       "address": {
         "@type": "PostalAddress",
@@ -164,13 +165,14 @@
             transition: color 0.3s;
         }
 
-        nav a:hover {
+        nav a:hover, nav a:focus {
             color: var(--primary-dark);
         }
 
         .header-cta {
             display: flex;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
         .btn-call, .whatsapp-btn {
@@ -180,6 +182,12 @@
             border-radius: var(--border-radius);
             font-size: 0.9rem;
             display: inline-block;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .btn-call:hover, .whatsapp-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
         }
 
         .btn-call {
@@ -250,6 +258,11 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 0.9rem;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: 2px solid var(--primary-color);
+            border-color: transparent;
         }
 
         .btn-submit {
@@ -345,6 +358,10 @@
             text-decoration: none;
         }
 
+        footer a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -371,10 +388,10 @@
     <!-- Header Section -->
     <header>
         <div class="logo">
-            <img src="https://lh3.googleusercontent.com/a-/ALV-UjXZBczWKiy-YB96jl3CxWh4d_dFjGp8Q8B-TrnYLXIHAPvYTQ" alt="The All India Travels Logo">
+            <img src="https://lh3.googleusercontent.com/a-/ALV-UjXZBczWKiy-YB96jl3CxWh4d_dFjGp8Q8B-TrnYLXIHAPvYTQ" alt="The All India Travels Logo" width="45" height="45">
             <h1>The All India Travels</h1>
         </div>
-        <nav>
+        <nav aria-label="Main Navigation">
             <a href="#services">Services</a>
             <a href="#fleet">Fleet</a>
             <a href="#booking">Book Now</a>
@@ -382,8 +399,9 @@
             <a href="#contact">Contact</a>
         </nav>
         <div class="header-cta">
-            <a href="tel:09566066250" class="btn-call">📞 Call 095660 66250</a>
-            <a href="https://wa.me/919566066250" class="whatsapp-btn">💬 WhatsApp</a>
+            <a href="tel:09566066250" class="btn-call" aria-label="Call 095660 66250">📞 095660 66250</a>
+            <a href="tel:09710375593" class="btn-call" aria-label="Call 097103 75593">📞 097103 75593</a>
+            <a href="https://wa.me/919566066250" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">💬 WhatsApp</a>
         </div>
     </header>
 
@@ -457,17 +475,17 @@
         <h2 class="section-title" id="fleet">Available Vehicles</h2>
         <section class="grid-container">
             <article class="card">
-                <img src="https://lh3.googleusercontent.com/JOZIhlyLC9wcTU5fb9bToztPlF5xQ0mcYZ_asNJf7JTAfV9MBGI8VfJIF7IsmHZE2B20Bhjg994M0WE=s0" alt="Sedan Taxi - Swift Dzire / Etios">
+                <img src="https://lh3.googleusercontent.com/JOZIhlyLC9wcTU5fb9bToztPlF5xQ0mcYZ_asNJf7JTAfV9MBGI8VfJIF7IsmHZE2B20Bhjg994M0WE=s0" alt="Sedan Taxi - Swift Dzire / Etios" loading="lazy" width="300" height="180">
                 <h3>Sedan (Swift Dzire / Etios)</h3>
                 <p>4 Seats | AC | Ideal for city travel and small family trips.</p>
             </article>
             <article class="card">
-                <img src="https://lh3.googleusercontent.com/gng99Q0oCjY9EOG7EMlcVEblYRtCo5bBU9e3RQa_C-22C9r4z9pyaHzv7RJYO22pOOtVXJiusIwHMLQ=s0" alt="Family SUV - Maruti Ertiga">
+                <img src="https://lh3.googleusercontent.com/gng99Q0oCjY9EOG7EMlcVEblYRtCo5bBU9e3RQa_C-22C9r4z9pyaHzv7RJYO22pOOtVXJiusIwHMLQ=s0" alt="Family SUV - Maruti Ertiga" loading="lazy" width="300" height="180">
                 <h3>Family SUV (Maruti Ertiga)</h3>
                 <p>6 Seats | Dual AC | Perfect for family travel and outstation drops.</p>
             </article>
             <article class="card">
-                <img src="https://lh3.googleusercontent.com/z9w6NQAnkViqZ4PS1kE7wCBuX_kCwVC1uPhrQnKhYFn7Dj3pLnmQKX9YrMn1qAcQCvvA9vLff3Q7blo=s0" alt="Premium SUV - Innova Crysta">
+                <img src="https://lh3.googleusercontent.com/z9w6NQAnkViqZ4PS1kE7wCBuX_kCwVC1uPhrQnKhYFn7Dj3pLnmQKX9YrMn1qAcQCvvA9vLff3Q7blo=s0" alt="Premium SUV - Innova Crysta" loading="lazy" width="300" height="180">
                 <h3>Premium SUV (Innova Crysta)</h3>
                 <p>7 Seats | Spacious & Premium comfort for long-distance travel.</p>
             </article>
@@ -509,7 +527,8 @@
     <footer id="contact">
         <h3>Contact The All India Travels</h3>
         <p><strong>Address:</strong> 214 Sai Balaji Nagar, 4th Part, 8th Cross Street, Chennai, TN 600100</p>
-        <p><strong>Phone:</strong> <a href="tel:09566066250">095660 66250</a></p>
+        <p><strong>Phone:</strong> <a href="tel:09566066250">095660 66250</a> | <a href="tel:09710375593">097103 75593</a></p>
+        <p><strong>Email:</strong> <a href="mailto:theallindiatravels@gmail.com">theallindiatravels@gmail.com</a></p>
         <p><strong>Hours:</strong> Open 24 Hours (7 Days a Week)</p>
         <p style="margin-top:20px; font-size:0.85rem;">&copy; The All India Travels. All Rights Reserved.</p>
     </footer>
