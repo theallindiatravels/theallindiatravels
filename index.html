@@ -8,6 +8,14 @@
     <meta name="keywords" content="taxi service chennai, outstation cabs chennai, one way drop taxi, airport taxi chennai, taxi service pondicherry, taxi service kanchipuram, taxi service chengalpattu, taxi service thiruvallur">
     <link rel="canonical" href="https://theallindiatravels.com/">
 
+    <!-- FIX 1 (PERFORMANCE / LCP): Preload hero image with fetchpriority="high" & optimized dimensions -->
+    <link 
+      rel="preload" 
+      as="image" 
+      href="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=75" 
+      fetchpriority="high"
+    />
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="The All India Travels - Best Taxi & Outstation Cab Service">
     <meta property="og:description" content="Safe, reliable, and affordable 24/7 taxi service across Chennai, Puducherry, Thiruvallur, Kanchipuram, and Chengalpattu.">
@@ -57,7 +65,9 @@
         :root {
             --primary-color: #ffb400;
             --primary-dark: #e09e00;
-            --secondary-color: #25d366;
+            /* FIX 2 (ACCESSIBILITY / CONTRAST): Darkened green from #25d366 to #075E54 to pass WCAG 4.5:1 ratio */
+            --secondary-color: #075E54;
+            --secondary-hover: #054840;
             --dark-color: #1a1a1a;
             --light-color: #f8f9fa;
             --text-color: #333333;
@@ -134,14 +144,15 @@
 
         .whatsapp-btn {
             background-color: var(--secondary-color);
-            color: white;
+            color: white !important;
         }
 
         /* Hero Section */
         .hero-container {
             display: flex;
             flex-wrap: wrap;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            /* Updated image URL parameters for performance optimization */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=75') center/cover no-repeat;
             color: white;
             padding: 60px 5%;
             align-items: center;
@@ -202,7 +213,7 @@
             width: 100%;
             padding: 12px;
             background-color: var(--secondary-color);
-            color: white;
+            color: white !important;
             border: none;
             border-radius: 4px;
             font-weight: bold;
@@ -212,7 +223,7 @@
         }
 
         .btn-submit:hover {
-            background-color: #1ebd56;
+            background-color: var(--secondary-hover);
         }
 
         /* Section Layouts */
@@ -302,87 +313,90 @@
         </div>
     </header>
 
-    <!-- Hero Section with Booking Form -->
-    <section class="hero-container" id="booking">
-        <div class="hero-text">
-            <h2>Reliable Taxi Service & Outstation Cabs</h2>
-            <p>24/7 Safe, Comfortable & Affordable Rides across Chennai, Puducherry, Thiruvallur, Kanchipuram, and Chengalpattu.</p>
-        </div>
+    <!-- FIX 3 (BEST PRACTICES): Added <main> landmark tag around primary content -->
+    <main>
+        <!-- Hero Section with Booking Form -->
+        <section class="hero-container" id="booking">
+            <div class="hero-text">
+                <h2>Reliable Taxi Service &amp; Outstation Cabs</h2>
+                <p>24/7 Safe, Comfortable &amp; Affordable Rides across Chennai, Puducherry, Thiruvallur, Kanchipuram, and Chengalpattu.</p>
+            </div>
 
-        <div class="booking-card">
-            <h3>Quick Cab Booking</h3>
-            <form id="cabBookingForm" onsubmit="handleBooking(event)">
-                <div class="form-group">
-                    <label for="tripType">Trip Type</label>
-                    <select id="tripType" name="tripType" required>
-                        <option value="One Way Drop">One Way Drop</option>
-                        <option value="Outstation Round Trip">Outstation Round Trip</option>
-                        <option value="Airport Transfer">Airport Transfer</option>
-                        <option value="Local Hourly Rental">Local Hourly Rental</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="pickup">Pickup Location</label>
-                    <input type="text" id="pickup" name="pickup" placeholder="e.g. Velachery / Puducherry" required>
-                </div>
-                <div class="form-group">
-                    <label for="drop">Drop Location</label>
-                    <input type="text" id="drop" name="drop" placeholder="e.g. Kanchipuram / Airport" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
-                </div>
-                <button type="submit" class="btn-submit">Book via WhatsApp</button>
-            </form>
-        </div>
-    </section>
+            <div class="booking-card">
+                <h3>Quick Cab Booking</h3>
+                <form id="cabBookingForm" onsubmit="handleBooking(event)">
+                    <div class="form-group">
+                        <label for="tripType">Trip Type</label>
+                        <select id="tripType" name="tripType" required>
+                            <option value="One Way Drop">One Way Drop</option>
+                            <option value="Outstation Round Trip">Outstation Round Trip</option>
+                            <option value="Airport Transfer">Airport Transfer</option>
+                            <option value="Local Hourly Rental">Local Hourly Rental</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pickup">Pickup Location</label>
+                        <input type="text" id="pickup" name="pickup" placeholder="e.g. Velachery / Puducherry" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="drop">Drop Location</label>
+                        <input type="text" id="drop" name="drop" placeholder="e.g. Kanchipuram / Airport" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Book via WhatsApp</button>
+                </form>
+            </div>
+        </section>
 
-    <!-- Services Section -->
-    <h2 class="section-title" id="services">Our Travel & Cab Services</h2>
-    <section class="grid-container">
-        <div class="card">
-            <h3>🚖 One Way Drop Cabs</h3>
-            <p>Pay only for one-way journeys across Tamil Nadu and Puducherry with no return charges.</p>
-        </div>
-        <div class="card">
-            <h3>🛣️ Outstation Round Trips</h3>
-            <p>Hassle-free outstation cab rentals for vacations, family events, and pilgrimages.</p>
-        </div>
-        <div class="card">
-            <h3>✈️ Airport Transfers</h3>
-            <p>Punctual 24/7 pickup and drop-off service for Chennai International Airport.</p>
-        </div>
-        <div class="card">
-            <h3>🏙️ Local Hourly Rentals</h3>
-            <p>Flexible hourly packages for local city exploration and shopping trips.</p>
-        </div>
-        <div class="card">
-            <h3>💼 Corporate Travel</h3>
-            <p>Professional transportation solutions tailored for business executives.</p>
-        </div>
-        <div class="card">
-            <h3>🚘 Wedding & Luxury Cars</h3>
-            <p>Premium luxury vehicles to make your special occasions memorable.</p>
-        </div>
-    </section>
+        <!-- Services Section -->
+        <h2 class="section-title" id="services">Our Travel &amp; Cab Services</h2>
+        <section class="grid-container">
+            <div class="card">
+                <h3>🚖 One Way Drop Cabs</h3>
+                <p>Pay only for one-way journeys across Tamil Nadu and Puducherry with no return charges.</p>
+            </div>
+            <div class="card">
+                <h3>🛣️ Outstation Round Trips</h3>
+                <p>Hassle-free outstation cab rentals for vacations, family events, and pilgrimages.</p>
+            </div>
+            <div class="card">
+                <h3>✈️ Airport Transfers</h3>
+                <p>Punctual 24/7 pickup and drop-off service for Chennai International Airport.</p>
+            </div>
+            <div class="card">
+                <h3>🏙️ Local Hourly Rentals</h3>
+                <p>Flexible hourly packages for local city exploration and shopping trips.</p>
+            </div>
+            <div class="card">
+                <h3>💼 Corporate Travel</h3>
+                <p>Professional transportation solutions tailored for business executives.</p>
+            </div>
+            <div class="card">
+                <h3>🚘 Wedding &amp; Luxury Cars</h3>
+                <p>Premium luxury vehicles to make your special occasions memorable.</p>
+            </div>
+        </section>
 
-    <!-- Fleet Section -->
-    <h2 class="section-title" id="fleet">Available Vehicles</h2>
-    <section class="grid-container">
-        <div class="card">
-            <h3>Sedan (Swift Dzire / Etios)</h3>
-            <p>4 Seats | AC | Ideal for city travel and small family trips.</p>
-        </div>
-        <div class="card">
-            <h3>Family SUV (Maruti Ertiga)</h3>
-            <p>6 Seats | Dual AC | Perfect for family travel and outstation drops.</p>
-        </div>
-        <div class="card">
-            <h3>Premium SUV (Innova Crysta)</h3>
-            <p>7 Seats | Spacious & Premium comfort for long-distance travel.</p>
-        </div>
-    </section>
+        <!-- Fleet Section -->
+        <h2 class="section-title" id="fleet">Available Vehicles</h2>
+        <section class="grid-container">
+            <div class="card">
+                <h3>Sedan (Swift Dzire / Etios)</h3>
+                <p>4 Seats | AC | Ideal for city travel and small family trips.</p>
+            </div>
+            <div class="card">
+                <h3>Family SUV (Maruti Ertiga)</h3>
+                <p>6 Seats | Dual AC | Perfect for family travel and outstation drops.</p>
+            </div>
+            <div class="card">
+                <h3>Premium SUV (Innova Crysta)</h3>
+                <p>7 Seats | Spacious &amp; Premium comfort for long-distance travel.</p>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer / Contact Section -->
     <footer id="contact">
