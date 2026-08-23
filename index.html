@@ -100,9 +100,9 @@
         :root {
             --primary-color: #ffb400;
             --primary-dark: #e09e00;
-            --secondary-color: #25D366;
+            --secondary-color: #25D366; /* Bright WhatsApp Green for contrast */
             --secondary-dark: #1da851;
-            --dark-color: #0f172a;
+            --dark-color: #0f172a; /* Premium Dark Slate */
             --light-color: #f8fafc;
             --text-color: #334155;
             --border-radius: 8px;
@@ -122,7 +122,7 @@
             line-height: 1.6;
         }
 
-        /* Header Styling */
+        /* Attractive Dark Header Styling */
         header {
             position: sticky;
             top: 0;
@@ -139,27 +139,27 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .logo img {
-            width: 42px;
-            height: 42px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--primary-color);
         }
 
         .logo h1 {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: #ffffff;
             font-weight: 700;
-            white-space: nowrap;
+            letter-spacing: 0.5px;
         }
 
         nav {
             display: flex;
-            gap: 20px;
+            gap: 22px;
         }
 
         nav a {
@@ -176,22 +176,21 @@
 
         .header-cta {
             display: flex;
-            gap: 8px;
+            gap: 10px;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .btn-call, .whatsapp-btn {
-            padding: 8px 12px;
+            padding: 9px 16px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: bold;
             border-radius: var(--border-radius);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 5px;
+            gap: 6px;
             transition: transform 0.2s ease, filter 0.2s ease;
-            white-space: nowrap;
         }
 
         .btn-call:hover, .whatsapp-btn:hover {
@@ -209,41 +208,37 @@
             color: #0f172a !important;
         }
 
-        /* Hero Container */
         .hero-container {
             display: flex;
             flex-wrap: wrap;
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://lh3.googleusercontent.com/z9w6NQAnkViqZ4PS1kE7wCBuX_kCwVC1uPhrQnKhYFn7Dj3pLnmQKX9YrMn1qAcQCvvA9vLff3Q7blo=s0') center/cover no-repeat;
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('https://lh3.googleusercontent.com/z9w6NQAnkViqZ4PS1kE7wCBuX_kCwVC1uPhrQnKhYFn7Dj3pLnmQKX9YrMn1qAcQCvvA9vLff3Q7blo=s0') center/cover no-repeat;
             color: white;
-            padding: 40px 5%;
+            padding: 60px 5%;
             align-items: center;
-            gap: 30px;
+            gap: 40px;
         }
 
         .hero-text {
             flex: 1;
-            min-width: 280px;
+            min-width: 300px;
         }
 
         .hero-text h2 {
-            font-size: 2.2rem;
-            margin-bottom: 12px;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
             color: var(--primary-color);
-            line-height: 1.2;
         }
 
         .hero-text p {
-            font-size: 1.05rem;
-            margin-bottom: 15px;
-            color: #e2e8f0;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
         }
 
         .booking-card {
-            flex: 0 0 350px;
-            width: 100%;
+            flex: 0 0 360px;
             background: #ffffff;
             color: var(--text-color);
-            padding: 22px;
+            padding: 25px;
             border-radius: var(--border-radius);
             box-shadow: 0 8px 30px rgba(0,0,0,0.3);
         }
@@ -252,11 +247,10 @@
             margin-bottom: 15px;
             color: var(--dark-color);
             text-align: center;
-            font-size: 1.25rem;
         }
 
         .form-group {
-            margin-bottom: 14px;
+            margin-bottom: 15px;
         }
 
         .form-group label {
@@ -264,16 +258,14 @@
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 5px;
-            color: #475569;
         }
 
         .form-group input, .form-group select {
             width: 100%;
-            padding: 10px 12px;
+            padding: 10px;
             border: 1px solid #cbd5e1;
-            border-radius: 6px;
+            border-radius: 4px;
             font-size: 0.9rem;
-            background-color: #fff;
         }
 
         .form-group input:focus, .form-group select:focus {
@@ -287,15 +279,11 @@
             background-color: var(--secondary-color);
             color: #0f172a !important;
             border: none;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 0.95rem;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 1rem;
             cursor: pointer;
             transition: background 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
         }
 
         .btn-submit:hover {
@@ -305,8 +293,8 @@
 
         .section-title {
             text-align: center;
-            font-size: 1.8rem;
-            margin: 35px 0 20px;
+            font-size: 2rem;
+            margin: 40px 0 20px;
             color: var(--dark-color);
         }
 
@@ -314,14 +302,14 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            padding: 0 5% 30px;
+            padding: 0 5% 40px;
         }
 
         .card {
             background: white;
-            padding: 22px;
+            padding: 25px;
             border-radius: var(--border-radius);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             border-top: 4px solid var(--primary-color);
             display: flex;
             flex-direction: column;
@@ -336,62 +324,45 @@
         }
 
         .card h3 {
-            margin-bottom: 8px;
-            font-size: 1.15rem;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
             color: var(--dark-color);
-        }
-
-        .card p {
-            font-size: 0.92rem;
-            color: #64748b;
         }
 
         .content-section {
             background: white;
-            padding: 30px 5%;
-            margin: 20px 5% 35px;
+            padding: 40px 5%;
+            margin: 20px 5% 40px;
             border-radius: var(--border-radius);
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
         .content-section h2, .content-section h3 {
             color: var(--dark-color);
-            margin-bottom: 10px;
-        }
-
-        .content-section h2 {
-            font-size: 1.5rem;
-        }
-
-        .content-section h3 {
-            font-size: 1.2rem;
-            margin-top: 15px;
+            margin-bottom: 12px;
         }
 
         .content-section p {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             color: #475569;
-            font-size: 0.95rem;
         }
 
         footer {
             background-color: var(--dark-color);
             color: #94a3b8;
-            padding: 35px 5% 20px;
+            padding: 40px 5% 20px;
             text-align: center;
             border-top: 3px solid var(--primary-color);
         }
 
         footer h3 {
             color: var(--primary-color);
-            margin-bottom: 12px;
-            font-size: 1.3rem;
+            margin-bottom: 15px;
         }
 
         footer p {
             margin-bottom: 8px;
             color: #e2e8f0;
-            font-size: 0.9rem;
         }
 
         footer a {
@@ -403,56 +374,26 @@
             text-decoration: underline;
         }
 
-        /* Mobile Specific Optimization */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                gap: 12px;
-                padding: 12px 15px;
+                gap: 15px;
+                text-align: center;
             }
 
             nav {
-                display: none; /* Hide top menu links on small screens to clean up space */
-            }
-
-            .logo h1 {
-                font-size: 1.2rem;
-            }
-
-            .header-cta {
-                width: 100%;
-                justify-content: center;
                 flex-wrap: wrap;
-                gap: 6px;
-            }
-
-            .btn-call, .whatsapp-btn {
-                flex: 1 1 auto;
-                padding: 8px 10px;
-                font-size: 0.8rem;
-            }
-
-            .hero-container {
-                padding: 30px 15px;
+                justify-content: center;
+                gap: 15px;
             }
 
             .hero-text h2 {
-                font-size: 1.6rem;
-                text-align: center;
-            }
-
-            .hero-text p {
-                text-align: center;
-                font-size: 0.95rem;
+                font-size: 1.8rem;
             }
 
             .booking-card {
-                flex: 1 1 100%;
-                padding: 18px;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
+                width: 100%;
+                flex: 1;
             }
         }
     </style>
@@ -466,7 +407,7 @@
     <!-- Header Section -->
     <header>
         <div class="logo">
-            <img src="https://lh3.googleusercontent.com/a-/ALV-UjXZBczWKiy-YB96jl3CxWh4d_dFjGp8Q8B-TrnYLXIHAPvYTQ" alt="The All India Travels Logo" width="42" height="42">
+            <img src="https://lh3.googleusercontent.com/a-/ALV-UjXZBczWKiy-YB96jl3CxWh4d_dFjGp8Q8B-TrnYLXIHAPvYTQ" alt="The All India Travels Logo" width="48" height="48">
             <h1>The All India Travels</h1>
         </div>
         <nav aria-label="Main Navigation">
@@ -515,7 +456,7 @@
                         <label for="phone">Phone Number</label>
                         <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
                     </div>
-                    <button type="submit" class="btn-submit">💬 Book via WhatsApp</button>
+                    <button type="submit" class="btn-submit">Book via WhatsApp</button>
                 </form>
             </div>
         </section>
