@@ -80,6 +80,8 @@
             --primary-dark: #e09e00;
             --secondary: #25D366;
             --secondary-dark: #1da851;
+            --call-color: #0284c7;
+            --call-dark: #0369a1;
             --dark: #0f172a;
             --light: #f8fafc;
             --text-color: #334155;
@@ -469,8 +471,8 @@
             color: #94a3b8;
         }
 
-        /* --- INSTANT WHATSAPP CHAT WIDGET STYLES --- */
-        .whatsapp-widget-container {
+        /* --- FLOATING WIDGETS CONTAINER (WhatsApp on Right, Call on Left) --- */
+        .widget-container-right {
             position: fixed;
             bottom: 25px;
             right: 25px;
@@ -480,7 +482,18 @@
             align-items: flex-end;
         }
 
-        .whatsapp-chat-popup {
+        .widget-container-left {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        /* WhatsApp Popup */
+        .chat-popup {
             background: #ffffff;
             width: 320px;
             border-radius: 16px;
@@ -492,7 +505,7 @@
             border: 1px solid var(--border);
         }
 
-        .whatsapp-chat-popup.active {
+        .chat-popup.active {
             display: block;
         }
 
@@ -508,13 +521,15 @@
         }
 
         .popup-header {
-            background: #075e54;
-            color: white;
             padding: 16px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            color: white;
         }
+
+        .whatsapp-header { background: #075e54; }
+        .call-header { background: #0369a1; }
 
         .popup-header-info {
             display: flex;
@@ -523,8 +538,7 @@
         }
 
         .popup-header-info i {
-            font-size: 28px;
-            color: var(--secondary);
+            font-size: 26px;
         }
 
         .popup-header h4 {
@@ -534,7 +548,7 @@
 
         .popup-header span {
             font-size: 0.75rem;
-            color: #d1fae5;
+            color: #e2e8f0;
             display: flex;
             align-items: center;
             gap: 5px;
@@ -549,6 +563,10 @@
             display: inline-block;
         }
 
+        .call-header span::before {
+            background: #38bdf8;
+        }
+
         .close-popup {
             background: none;
             border: none;
@@ -559,8 +577,8 @@
 
         .popup-body {
             padding: 15px;
-            background: #e5ddd5;
-            max-height: 220px;
+            background: #f1f5f9;
+            max-height: 240px;
             overflow-y: auto;
         }
 
@@ -572,20 +590,49 @@
             color: #303030;
             box-shadow: 0 1px 2px rgba(0,0,0,0.1);
             margin-bottom: 10px;
-            position: relative;
-            max-width: 85%;
         }
 
-        .chat-bubble::after {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 10px;
-            width: 0;
-            height: 0;
-            border: 6px solid transparent;
-            border-right-color: white;
-            border-left: 0;
+        /* Call List Item Styling */
+        .call-item {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--call-color);
+            text-decoration: none;
+            color: var(--dark);
+            transition: background 0.2s;
+        }
+
+        .call-item:hover {
+            background: #f8fafc;
+        }
+
+        .call-item-details strong {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+
+        .call-item-details span {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        .call-action-btn {
+            background: var(--call-color);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
         }
 
         .popup-footer {
@@ -623,25 +670,28 @@
             transform: scale(1.05);
         }
 
-        .float-whatsapp-btn {
-            background: var(--secondary);
-            color: #fff;
+        /* Floating Trigger Buttons */
+        .float-btn {
             width: 60px;
             height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            font-size: 28px;
             cursor: pointer;
             border: none;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
             transition: transform 0.3s;
+            color: #fff;
         }
 
-        .float-whatsapp-btn:hover {
+        .float-btn:hover {
             transform: scale(1.1);
         }
+
+        .whatsapp-float-btn { background: var(--secondary); }
+        .call-float-btn { background: var(--call-color); }
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
@@ -671,9 +721,18 @@
                 width: 100%;
             }
 
-            .whatsapp-chat-popup {
-                width: 90vw;
-                right: 5vw;
+            .chat-popup {
+                width: 88vw;
+            }
+
+            .widget-container-right {
+                right: 15px;
+                bottom: 15px;
+            }
+
+            .widget-container-left {
+                left: 15px;
+                bottom: 15px;
             }
         }
     </style>
@@ -869,17 +928,51 @@
         </div>
     </footer>
 
-    <div class="whatsapp-widget-container">
-        <div class="whatsapp-chat-popup" id="whatsappPopup">
-            <div class="popup-header">
+    <div class="widget-container-left">
+        <div class="chat-popup" id="callPopup">
+            <div class="popup-header call-header">
+                <div class="popup-header-info">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <div>
+                        <h4>Direct Helpline</h4>
+                        <span>Tap number to connect</span>
+                    </div>
+                </div>
+                <button class="close-popup" onclick="toggleCallPopup()">×</button>
+            </div>
+            <div class="popup-body">
+                <a href="tel:+919566066250" class="call-item">
+                    <div class="call-item-details">
+                        <strong>Line 1: +91 95660 66250</strong>
+                        <span>Available 24/7 for Bookings</span>
+                    </div>
+                    <div class="call-action-btn"><i class="fa-solid fa-phone"></i></div>
+                </a>
+                <a href="tel:+919710375593" class="call-item">
+                    <div class="call-item-details">
+                        <strong>Line 2: +91 97103 75593</strong>
+                        <span>Available 24/7 for Inquiries</span>
+                    </div>
+                    <div class="call-action-btn"><i class="fa-solid fa-phone"></i></div>
+                </a>
+            </div>
+        </div>
+        <button class="float-btn call-float-btn" onclick="toggleCallPopup()" aria-label="Open Call Widget">
+            <i class="fa-solid fa-phone"></i>
+        </button>
+    </div>
+
+    <div class="widget-container-right">
+        <div class="chat-popup" id="whatsappPopup">
+            <div class="popup-header whatsapp-header">
                 <div class="popup-header-info">
                     <i class="fa-brands fa-whatsapp"></i>
                     <div>
                         <h4>The All India Travels</h4>
-                        <span>Online | Typically replies instantly</span>
+                        <span>Online | Replies instantly</span>
                     </div>
                 </div>
-                <button class="close-popup" onclick="toggleWhatsAppPopup()">&times;</button>
+                <button class="close-popup" onclick="toggleWhatsAppPopup()">×</button>
             </div>
             <div class="popup-body">
                 <div class="chat-bubble">
@@ -891,8 +984,7 @@
                 <button class="send-btn" onclick="sendWidgetMessage()"><i class="fa-solid fa-paper-plane"></i></button>
             </div>
         </div>
-
-        <button class="float-whatsapp-btn" onclick="toggleWhatsAppPopup()" aria-label="Open WhatsApp Chat">
+        <button class="float-btn whatsapp-float-btn" onclick="toggleWhatsAppPopup()" aria-label="Open WhatsApp Chat">
             <i class="fa-brands fa-whatsapp"></i>
         </button>
     </div>
@@ -916,9 +1008,19 @@
             window.open(whatsappURL, '_blank');
         }
 
-        // Instant WhatsApp Widget Functionality
+        // WhatsApp Popup Toggle Logic
         function toggleWhatsAppPopup() {
             const popup = document.getElementById('whatsappPopup');
+            const callPopup = document.getElementById('callPopup');
+            callPopup.classList.remove('active'); // Close other popup
+            popup.classList.toggle('active');
+        }
+
+        // Call Popup Toggle Logic
+        function toggleCallPopup() {
+            const popup = document.getElementById('callPopup');
+            const whatsappPopup = document.getElementById('whatsappPopup');
+            whatsappPopup.classList.remove('active'); // Close other popup
             popup.classList.toggle('active');
         }
 
