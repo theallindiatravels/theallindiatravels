@@ -2,6 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://theallindiatravels.com/sitemap.xml
+sitemap: https://a696296.sitemaphosting7.com/4847925/sitemap_4847925.xml
 
 # Disallow admin areas
 Disallow: /admin/
