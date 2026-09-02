@@ -954,7 +954,7 @@ header .container { display: flex; justify-content: space-between; align-items: 
 
 footer { background: var(--green-dark); color: var(--white); padding: 80px 0 0; }
 .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-bottom: 60px; }
-.footer-col h4 { font-size: 1.2rem; margin-bottom: 20px; color: var(--gold); }
+.footer-col h3 { font-size: 1.2rem; margin-bottom: 20px; color: var(--gold); }
 .footer-col p { color: rgba(255, 255, 255, 0.7); margin-bottom: 15px; }
 .footer-links li { margin-bottom: 10px; }
 .footer-links a { color: rgba(255, 255, 255, 0.7); transition: color 0.3s ease; }
@@ -1350,6 +1350,7 @@ footer { background: var(--green-dark); color: var(--white); padding: 80px 0 0; 
 
 /* === MOBILE & RESPONSIVE UX ENHANCEMENTS === */
 @media (max-width: 1024px) {
+  .top-bar { display: none !important; }
   .hero-content, 
   .contact-grid, 
   .loc-intro, 
