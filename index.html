@@ -469,11 +469,161 @@
             color: #94a3b8;
         }
 
-        /* Floating WhatsApp Icon */
-        .float-whatsapp {
+        /* --- INSTANT WHATSAPP CHAT WIDGET STYLES --- */
+        .whatsapp-widget-container {
             position: fixed;
             bottom: 25px;
             right: 25px;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .whatsapp-chat-popup {
+            background: #ffffff;
+            width: 320px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            margin-bottom: 15px;
+            overflow: hidden;
+            display: none;
+            animation: fadeInUp 0.3s ease forwards;
+            border: 1px solid var(--border);
+        }
+
+        .whatsapp-chat-popup.active {
+            display: block;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .popup-header {
+            background: #075e54;
+            color: white;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .popup-header-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .popup-header-info i {
+            font-size: 28px;
+            color: var(--secondary);
+        }
+
+        .popup-header h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .popup-header span {
+            font-size: 0.75rem;
+            color: #d1fae5;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .popup-header span::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .close-popup {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .popup-body {
+            padding: 15px;
+            background: #e5ddd5;
+            max-height: 220px;
+            overflow-y: auto;
+        }
+
+        .chat-bubble {
+            background: white;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: #303030;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+            position: relative;
+            max-width: 85%;
+        }
+
+        .chat-bubble::after {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 10px;
+            width: 0;
+            height: 0;
+            border: 6px solid transparent;
+            border-right-color: white;
+            border-left: 0;
+        }
+
+        .popup-footer {
+            padding: 12px;
+            background: #f0f2f5;
+            display: flex;
+            gap: 8px;
+        }
+
+        .popup-footer input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            outline: none;
+        }
+
+        .send-btn {
+            background: var(--secondary);
+            color: #0f172a;
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+
+        .send-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .float-whatsapp-btn {
             background: var(--secondary);
             color: #fff;
             width: 60px;
@@ -484,12 +634,12 @@
             justify-content: center;
             font-size: 32px;
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
-            text-decoration: none;
+            cursor: pointer;
+            border: none;
             transition: transform 0.3s;
         }
 
-        .float-whatsapp:hover {
+        .float-whatsapp-btn:hover {
             transform: scale(1.1);
         }
 
@@ -519,6 +669,11 @@
 
             .booking-card {
                 width: 100%;
+            }
+
+            .whatsapp-chat-popup {
+                width: 90vw;
+                right: 5vw;
             }
         }
     </style>
@@ -710,13 +865,37 @@
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2026 The All India Travels. All Rights Reserved.</p>
+            <p>© 2026 The All India Travels. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/919566066250?text=Hi,%20I%20would%20like%20to%20book%20a%20cab." target="_blank" class="float-whatsapp" aria-label="WhatsApp Booking">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+    <div class="whatsapp-widget-container">
+        <div class="whatsapp-chat-popup" id="whatsappPopup">
+            <div class="popup-header">
+                <div class="popup-header-info">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div>
+                        <h4>The All India Travels</h4>
+                        <span>Online | Typically replies instantly</span>
+                    </div>
+                </div>
+                <button class="close-popup" onclick="toggleWhatsAppPopup()">&times;</button>
+            </div>
+            <div class="popup-body">
+                <div class="chat-bubble">
+                    Hello! 👋 Welcome to The All India Travels. Need a cab in Chennai or an outstation drop? Let's chat on WhatsApp!
+                </div>
+            </div>
+            <div class="popup-footer">
+                <input type="text" id="widgetMessageInput" placeholder="Type your trip details..." onkeypress="handleWidgetEnter(event)">
+                <button class="send-btn" onclick="sendWidgetMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+        <button class="float-whatsapp-btn" onclick="toggleWhatsAppPopup()" aria-label="Open WhatsApp Chat">
+            <i class="fa-brands fa-whatsapp"></i>
+        </button>
+    </div>
 
     <script>
         function handleBooking(event) {
@@ -735,6 +914,26 @@
 
             const whatsappURL = `https://wa.me/919566066250?text=${whatsappMessage}`;
             window.open(whatsappURL, '_blank');
+        }
+
+        // Instant WhatsApp Widget Functionality
+        function toggleWhatsAppPopup() {
+            const popup = document.getElementById('whatsappPopup');
+            popup.classList.toggle('active');
+        }
+
+        function sendWidgetMessage() {
+            const input = document.getElementById('widgetMessageInput');
+            const message = input.value.trim() || "Hi, I want to book a taxi.";
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/919566066250?text=${encodedMessage}`, '_blank');
+            input.value = '';
+        }
+
+        function handleWidgetEnter(event) {
+            if (event.key === 'Enter') {
+                sendWidgetMessage();
+            }
         }
     </script>
 </body>
