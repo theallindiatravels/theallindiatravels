@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZ6KDJSMDS"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -11,30 +10,22 @@
       gtag('config', 'G-HZ6KDJSMDS');
     </script>
 
-    <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WV2PLH3W');</script>
-    <!-- End Google Tag Manager -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Title Tag -->
     <title>Taxi Service in Chennai | The All India Travels</title>
 
-    <!-- Meta Description -->
     <meta name="description" content="Book 24/7 taxi service in Chennai, Puducherry, Kanchipuram & nearby areas. Reliable outstation cabs & airport transfers. Call 095660 66250 or 097103 75593 today!">
 
-    <!-- Robots Meta Tag -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-    <!-- Canonical Tag -->
     <link rel="canonical" href="https://theallindiatravels.com/">
 
-    <!-- Favicon Links -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -42,21 +33,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <!-- Preload Hero Background Image from GBP -->
-    <link 
-      rel="preload" 
-      as="image" 
-      href="https://lh3.googleusercontent.com/z9w6NQAnkViqZ4PS1kE7wCBuX_kCwVC1uPhrQnKhYFn7Dj3pLnmQKX9YrMn1qAcQCvvA9vLff3Q7blo=s0" 
-      fetchpriority="high"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="The All India Travels - Best Taxi & Outstation Cab Service">
-    <meta property="og:description" content="Safe, reliable, and affordable 24/7 taxi service across Chennai, Puducherry, Thiruvallur, Kanchipuram, and Chengalpattu.">
-    <meta property="og:url" content="https://theallindiatravels.com/">
-    <meta property="og:type" content="website">
-
-    <!-- JSON-LD Structured Data Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -95,39 +74,63 @@
     }
     </script>
 
-    <!-- Styles -->
     <style>
         :root {
-            --primary-color: #ffb400;
+            --primary: #ffb400;
             --primary-dark: #e09e00;
-            --secondary-color: #25D366; /* Bright WhatsApp Green for contrast */
+            --secondary: #25D366;
             --secondary-dark: #1da851;
-            --dark-color: #0f172a; /* Premium Dark Slate */
-            --light-color: #f8fafc;
+            --dark: #0f172a;
+            --light: #f8fafc;
             --text-color: #334155;
-            --border-radius: 8px;
+            --gray: #64748b;
+            --border: #e2e8f0;
+            --border-radius: 12px;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
             color: var(--text-color);
-            background-color: var(--light-color);
+            background-color: var(--light);
             line-height: 1.6;
         }
 
-        /* Attractive Dark Header Styling */
+        /* Top Contact Bar */
+        .top-bar {
+            background-color: var(--dark);
+            color: #fff;
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .top-bar-info a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .top-bar-info i {
+            color: var(--primary);
+            margin-right: 6px;
+        }
+
+        /* Header Navigation */
         header {
             position: sticky;
             top: 0;
-            background: var(--dark-color);
-            border-bottom: 3px solid var(--primary-color);
+            background: var(--dark);
+            border-bottom: 3px solid var(--primary);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -140,6 +143,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            text-decoration: none;
         }
 
         .logo img {
@@ -147,14 +151,13 @@
             height: 48px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid var(--primary-color);
+            border: 2px solid var(--primary);
         }
 
         .logo h1 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #ffffff;
             font-weight: 700;
-            letter-spacing: 0.5px;
         }
 
         nav {
@@ -170,8 +173,8 @@
             transition: color 0.3s ease;
         }
 
-        nav a:hover, nav a:focus {
-            color: var(--primary-color);
+        nav a:hover {
+            color: var(--primary);
         }
 
         .header-cta {
@@ -199,19 +202,20 @@
         }
 
         .btn-call {
-            background-color: var(--primary-color);
+            background-color: var(--primary);
             color: #0f172a;
         }
 
         .whatsapp-btn {
-            background-color: var(--secondary-color);
+            background-color: var(--secondary);
             color: #0f172a !important;
         }
 
+        /* Hero & Interactive Booking Section */
         .hero-container {
             display: flex;
             flex-wrap: wrap;
-            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('https://lh3.googleusercontent.com/z9w6NQAnkViqZ4PS1kE7wCBuX_kCwVC1uPhrQnKhYFn7Dj3pLnmQKX9YrMn1qAcQCvvA9vLff3Q7blo=s0') center/cover no-repeat;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://lh3.googleusercontent.com/z9w6NQAnkViqZ4PS1kE7wCBuX_kCwVC1uPhrQnKhYFn7Dj3pLnmQKX9YrMn1qAcQCvvA9vLff3Q7blo=s0') center/cover no-repeat;
             color: white;
             padding: 60px 5%;
             align-items: center;
@@ -224,29 +228,32 @@
         }
 
         .hero-text h2 {
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 4vw, 2.8rem);
             margin-bottom: 15px;
-            color: var(--primary-color);
+            color: var(--primary);
+            font-weight: 800;
         }
 
         .hero-text p {
             font-size: 1.1rem;
             margin-bottom: 20px;
+            color: #cbd5e1;
         }
 
         .booking-card {
-            flex: 0 0 360px;
+            flex: 0 0 380px;
             background: #ffffff;
             color: var(--text-color);
             padding: 25px;
             border-radius: var(--border-radius);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.3);
         }
 
         .booking-card h3 {
             margin-bottom: 15px;
-            color: var(--dark-color);
+            color: var(--dark);
             text-align: center;
+            font-size: 1.25rem;
         }
 
         .form-group {
@@ -256,124 +263,237 @@
         .form-group label {
             display: block;
             font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 5px;
+            color: var(--gray);
         }
 
         .form-group input, .form-group select {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #cbd5e1;
-            border-radius: 4px;
-            font-size: 0.9rem;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            background: var(--light);
+            outline: none;
         }
 
         .form-group input:focus, .form-group select:focus {
-            outline: 2px solid var(--primary-color);
-            border-color: transparent;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 180, 0, 0.15);
         }
 
         .btn-submit {
             width: 100%;
-            padding: 12px;
-            background-color: var(--secondary-color);
+            padding: 13px;
+            background-color: var(--secondary);
             color: #0f172a !important;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             font-weight: bold;
             font-size: 1rem;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: background 0.3s, transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
         .btn-submit:hover {
             background-color: var(--secondary-dark);
-            color: white !important;
+            transform: translateY(-2px);
         }
 
+        /* Section Typography & Grids */
         .section-title {
             text-align: center;
-            font-size: 2rem;
-            margin: 40px 0 20px;
-            color: var(--dark-color);
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+            margin: 60px 0 10px;
+            color: var(--dark);
+            font-weight: 800;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 40px;
+            font-size: 1rem;
         }
 
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            gap: 25px;
             padding: 0 5% 40px;
+            max-width: 1300px;
+            margin: 0 auto;
         }
 
         .card {
             background: white;
-            padding: 25px;
+            padding: 30px;
             border-radius: var(--border-radius);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border-top: 4px solid var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary);
             display: flex;
             flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.08);
         }
 
         .card img {
             width: 100%;
             height: 180px;
             object-fit: cover;
-            border-radius: 6px;
+            border-radius: 8px;
             margin-bottom: 15px;
         }
 
         .card h3 {
             margin-bottom: 10px;
-            font-size: 1.2rem;
-            color: var(--dark-color);
+            font-size: 1.25rem;
+            color: var(--dark);
+            font-weight: 700;
         }
 
+        .card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Route Badges Section */
+        .routes-section {
+            background: #1e293b;
+            color: #fff;
+            padding: 60px 5%;
+            margin: 40px 0;
+        }
+
+        .routes-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .route-pill {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 10px 18px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .route-pill:hover {
+            background: var(--primary);
+            color: var(--dark);
+            border-color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* About Us Content Section */
         .content-section {
             background: white;
-            padding: 40px 5%;
-            margin: 20px 5% 40px;
+            padding: 50px 5%;
+            max-width: 1200px;
+            margin: 40px auto;
             border-radius: var(--border-radius);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
         }
 
         .content-section h2, .content-section h3 {
-            color: var(--dark-color);
-            margin-bottom: 12px;
+            color: var(--dark);
+            margin-bottom: 15px;
         }
 
         .content-section p {
-            margin-bottom: 15px;
-            color: #475569;
+            margin-bottom: 20px;
+            color: var(--gray);
+            font-size: 1.05rem;
         }
 
+        /* Footer */
         footer {
-            background-color: var(--dark-color);
+            background-color: var(--dark);
             color: #94a3b8;
-            padding: 40px 5% 20px;
+            padding: 60px 5% 30px;
+            border-top: 3px solid var(--primary);
             text-align: center;
-            border-top: 3px solid var(--primary-color);
         }
 
-        footer h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            text-align: left;
         }
 
-        footer p {
-            margin-bottom: 8px;
-            color: #e2e8f0;
+        .footer-col h3, .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
         }
 
-        footer a {
-            color: var(--primary-color);
+        .footer-col p {
+            margin-bottom: 10px;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+
+        .footer-col a {
+            color: var(--primary);
             text-decoration: none;
         }
 
-        footer a:hover {
+        .footer-col a:hover {
             text-decoration: underline;
         }
 
+        .copyright {
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        /* Floating WhatsApp Icon */
+        .float-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: var(--secondary);
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .float-whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -384,52 +504,61 @@
             nav {
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 15px;
+                gap: 12px;
+            }
+
+            .top-bar {
+                flex-direction: column;
+                gap: 6px;
+                text-align: center;
             }
 
             .hero-text h2 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             .booking-card {
                 width: 100%;
-                flex: 1;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WV2PLH3W"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <div class="top-bar">
+        <div class="top-bar-info">
+            <a href="tel:+919566066250"><i class="fa-solid fa-phone"></i> +91 95660 66250</a>
+            <a href="tel:+919710375593"><i class="fa-solid fa-phone"></i> +91 97103 75593</a>
+        </div>
+        <div>
+            <span><i class="fa-solid fa-location-dot"></i> Pallikaranai, Chennai - 600100</span>
+        </div>
+    </div>
 
-    <!-- Header Section -->
     <header>
-        <div class="logo">
+        <a href="#" class="logo">
             <img src="https://lh3.googleusercontent.com/a-/ALV-UjXZBczWKiy-YB96jl3CxWh4d_dFjGp8Q8B-TrnYLXIHAPvYTQ" alt="The All India Travels Logo" width="48" height="48">
             <h1>The All India Travels</h1>
-        </div>
+        </a>
         <nav aria-label="Main Navigation">
             <a href="#services">Services</a>
+            <a href="#routes">Routes</a>
             <a href="#fleet">Fleet</a>
-            <a href="#booking">Book Now</a>
             <a href="#about">About Us</a>
             <a href="#contact">Contact</a>
         </nav>
         <div class="header-cta">
-            <a href="tel:09566066250" class="btn-call" aria-label="Call 095660 66250">📞 095660 66250</a>
-            <a href="tel:09710375593" class="btn-call" aria-label="Call 097103 75593">📞 097103 75593</a>
-            <a href="https://wa.me/919566066250" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp">💬 WhatsApp</a>
+            <a href="tel:09566066250" class="btn-call" aria-label="Call 095660 66250"><i class="fa-solid fa-phone"></i> 095660 66250</a>
+            <a href="https://wa.me/919566066250" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i> Chat</a>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section with Booking Form -->
         <section class="hero-container" id="booking">
             <div class="hero-text">
-                <h2>Reliable Taxi Service & Outstation Cabs</h2>
-                <p>24/7 Safe, Comfortable & Affordable Rides across Chennai, Puducherry, Thiruvallur, Kanchipuram, and Chengalpattu.</p>
+                <h2>Reliable Taxi Service & Outstation Cabs in Chennai</h2>
+                <p>24/7 Safe, Comfortable & Affordable Rides across Chennai, Puducherry, Thiruvallur, Kanchipuram, and Chengalpattu with instant WhatsApp dispatch.</p>
             </div>
 
             <div class="booking-card">
@@ -446,31 +575,31 @@
                     </div>
                     <div class="form-group">
                         <label for="pickup">Pickup Location</label>
-                        <input type="text" id="pickup" name="pickup" placeholder="e.g. Velachery / Puducherry" required>
+                        <input type="text" id="pickup" name="pickup" placeholder="e.g. Velachery / Chennai Airport" required>
                     </div>
                     <div class="form-group">
                         <label for="drop">Drop Location</label>
-                        <input type="text" id="drop" name="drop" placeholder="e.g. Kanchipuram / Airport" required>
+                        <input type="text" id="drop" name="drop" placeholder="e.g. Pondicherry / Tirupati" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
                         <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
                     </div>
-                    <button type="submit" class="btn-submit">Book via WhatsApp</button>
+                    <button type="submit" class="btn-submit"><i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Book via WhatsApp</button>
                 </form>
             </div>
         </section>
 
-        <!-- Services Section -->
         <h2 class="section-title" id="services">Our Travel & Cab Services</h2>
+        <p class="section-subtitle">Tailored transportation solutions across Chennai & Tamil Nadu</p>
         <section class="grid-container">
             <article class="card">
                 <h3>🚖 One Way Drop Cabs</h3>
-                <p>Pay only for one-way journeys across Tamil Nadu and Puducherry with no return charges.</p>
+                <p>Pay only for one-way journeys across Tamil Nadu and Puducherry with zero return charges.</p>
             </article>
             <article class="card">
                 <h3>🛣️ Outstation Round Trips</h3>
-                <p>Hassle-free outstation cab rentals for vacations, family events, and pilgrimages.</p>
+                <p>Hassle-free outstation cab rentals for vacations, family events, and weekend getaways.</p>
             </article>
             <article class="card">
                 <h3>✈️ Airport Transfers</h3>
@@ -478,20 +607,39 @@
             </article>
             <article class="card">
                 <h3>🏙️ Local Hourly Rentals</h3>
-                <p>Flexible hourly packages for local city exploration and shopping trips.</p>
+                <p>Flexible hourly packages (4hr/40km, 8hr/80km) for city tours and shopping trips.</p>
             </article>
             <article class="card">
                 <h3>💼 Corporate Travel</h3>
-                <p>Professional transportation solutions tailored for business executives.</p>
+                <p>Professional transportation solutions tailored for business executives and tech corridors.</p>
             </article>
             <article class="card">
                 <h3>🚘 Wedding & Luxury Cars</h3>
-                <p>Premium luxury vehicles to make your special occasions memorable.</p>
+                <p>Premium vehicles and luxury cars to make your special occasions memorable.</p>
             </article>
         </section>
 
-        <!-- Fleet Section -->
+        <section id="routes" class="routes-section">
+            <div class="section-title" style="color: #fff; margin-top: 0;">Popular Outstation & Neighborhood Routes</div>
+            <p class="section-subtitle" style="color: #94a3b8;">Serving all key transit corridors, temple towns, and neighborhood hubs</p>
+            <div class="routes-grid">
+                <div class="route-pill"><i class="fa-solid fa-location-dot" style="color:var(--primary)"></i> Chennai to Tirupathi</div>
+                <div class="route-pill"><i class="fa-solid fa-location-dot" style="color:var(--primary)"></i> Chennai to Pondicherry</div>
+                <div class="route-pill"><i class="fa-solid fa-location-dot" style="color:var(--primary)"></i> Chennai to Bangalore</div>
+                <div class="route-pill"><i class="fa-solid fa-location-dot" style="color:var(--primary)"></i> Chennai to Mahabalipuram</div>
+                <div class="route-pill"><i class="fa-solid fa-location-dot" style="color:var(--primary)"></i> Chennai to Vellore</div>
+                <div class="route-pill"><i class="fa-solid fa-location-dot" style="color:var(--primary)"></i> Chennai to Kanchipuram</div>
+                <div class="route-pill"><i class="fa-solid fa-location-dot" style="color:var(--primary)"></i> Chennai to Trichy & Madurai</div>
+                <div class="route-pill"><i class="fa-solid fa-location-dot" style="color:var(--primary)"></i> OMR IT Corridor Cab</div>
+                <div class="route-pill"><i class="fa-solid fa-location-dot" style="color:var(--primary)"></i> Tambaram to Airport Taxi</div>
+                <div class="route-pill"><i class="fa-solid fa-location-dot" style="color:var(--primary)"></i> Velachery to OMR Rental</div>
+                <div class="route-pill"><i class="fa-solid fa-location-dot" style="color:var(--primary)"></i> Anna Nagar Airport Cab</div>
+                <div class="route-pill"><i class="fa-solid fa-location-dot" style="color:var(--primary)"></i> T. Nagar Shopping Rental</div>
+            </div>
+        </section>
+
         <h2 class="section-title" id="fleet">Available Vehicles</h2>
+        <p class="section-subtitle">Clean, well-maintained fleet operated by professional drivers</p>
         <section class="grid-container">
             <article class="card">
                 <img src="https://lh3.googleusercontent.com/JOZIhlyLC9wcTU5fb9bToztPlF5xQ0mcYZ_asNJf7JTAfV9MBGI8VfJIF7IsmHZE2B20Bhjg994M0WE=s0" alt="Sedan Taxi - Swift Dzire / Etios" loading="lazy" width="300" height="180">
@@ -510,7 +658,6 @@
             </article>
         </section>
 
-        <!-- About Us Section -->
         <section class="content-section" id="about">
             <article>
                 <h2>Why Choose The All India Travels for Your Journey?</h2>
@@ -542,17 +689,35 @@
         </section>
     </main>
 
-    <!-- Footer / Contact Section -->
     <footer id="contact">
-        <h3>Contact The All India Travels</h3>
-        <p><strong>Address:</strong> 214 Sai Balaji Nagar, 4th Part, 8th Cross Street, Chennai, TN 600100</p>
-        <p><strong>Phone:</strong> <a href="tel:09566066250">095660 66250</a> | <a href="tel:09710375593">097103 75593</a></p>
-        <p><strong>Email:</strong> <a href="mailto:theallindiatravels@gmail.com">theallindiatravels@gmail.com</a></p>
-        <p><strong>Hours:</strong> Open 24 Hours (7 Days a Week)</p>
-        <p style="margin-top:20px; font-size:0.85rem; color: #94a3b8;">&copy; The All India Travels. All Rights Reserved.</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>The All India Travels</h3>
+                <p>Your dependable travel partner for safe, comfortable, and affordable cab booking across Chennai and South India.</p>
+                <p><i class="fa-solid fa-phone" style="color:var(--primary); margin-right: 8px;"></i> +91 95660 66250 / +91 97103 75593</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <p><a href="#services">Our Services</a></p>
+                <p><a href="#routes">Popular Routes</a></p>
+                <p><a href="#fleet">Our Fleet</a></p>
+                <p><a href="#about">About Us</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Office Address</h4>
+                <p>214 Sai Balaji Nagar, 4th Part, 8th Cross Street,<br>Pallikaranai, Chennai, Greater Chennai,<br>Tamil Nadu 600100, India</p>
+                <p><strong>Hours:</strong> Open 24 Hours (7 Days a Week)</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 The All India Travels. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <!-- Interactive JavaScript -->
+    <a href="https://wa.me/919566066250?text=Hi,%20I%20would%20like%20to%20book%20a%20cab." target="_blank" class="float-whatsapp" aria-label="WhatsApp Booking">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
     <script>
         function handleBooking(event) {
             event.preventDefault();
