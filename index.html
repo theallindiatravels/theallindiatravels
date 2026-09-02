@@ -471,8 +471,8 @@
             color: #94a3b8;
         }
 
-        /* --- FLOATING WIDGETS CONTAINER (WhatsApp on Right, Call on Left) --- */
-        .widget-container-right {
+        /* --- STACKED FLOATING WIDGETS (Bottom Right Stack: Call on top of WhatsApp) --- */
+        .widget-stack-container {
             position: fixed;
             bottom: 25px;
             right: 25px;
@@ -480,25 +480,23 @@
             display: flex;
             flex-direction: column;
             align-items: flex-end;
+            gap: 15px;
         }
 
-        .widget-container-left {
-            position: fixed;
-            bottom: 25px;
-            left: 25px;
-            z-index: 2000;
+        .widget-group {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: flex-end;
+            position: relative;
         }
 
-        /* WhatsApp Popup */
+        /* Chat & Call Popup Popovers */
         .chat-popup {
             background: #ffffff;
             width: 320px;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             overflow: hidden;
             display: none;
             animation: fadeInUp 0.3s ease forwards;
@@ -608,6 +606,10 @@
             transition: background 0.2s;
         }
 
+        .call-item:last-child {
+            margin-bottom: 0;
+        }
+
         .call-item:hover {
             background: #f8fafc;
         }
@@ -670,18 +672,18 @@
             transform: scale(1.05);
         }
 
-        /* Floating Trigger Buttons */
+        /* Floating Trigger Buttons (Smaller size for dual stack appearance) */
         .float-btn {
-            width: 60px;
-            height: 60px;
+            width: 54px;
+            height: 54px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 28px;
+            font-size: 24px;
             cursor: pointer;
             border: none;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             transition: transform 0.3s;
             color: #fff;
         }
@@ -725,13 +727,8 @@
                 width: 88vw;
             }
 
-            .widget-container-right {
+            .widget-stack-container {
                 right: 15px;
-                bottom: 15px;
-            }
-
-            .widget-container-left {
-                left: 15px;
                 bottom: 15px;
             }
         }
@@ -928,65 +925,67 @@
         </div>
     </footer>
 
-    <div class="widget-container-left">
-        <div class="chat-popup" id="callPopup">
-            <div class="popup-header call-header">
-                <div class="popup-header-info">
-                    <i class="fa-solid fa-phone-volume"></i>
-                    <div>
-                        <h4>Direct Helpline</h4>
-                        <span>Tap number to connect</span>
+    <div class="widget-stack-container">
+        <div class="widget-group">
+            <div class="chat-popup" id="callPopup">
+                <div class="popup-header call-header">
+                    <div class="popup-header-info">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <div>
+                            <h4>Direct Helpline</h4>
+                            <span>Tap number to connect</span>
+                        </div>
                     </div>
+                    <button class="close-popup" onclick="toggleCallPopup()">×</button>
                 </div>
-                <button class="close-popup" onclick="toggleCallPopup()">×</button>
+                <div class="popup-body">
+                    <a href="tel:+919566066250" class="call-item">
+                        <div class="call-item-details">
+                            <strong>Line 1: +91 95660 66250</strong>
+                            <span>Available 24/7 for Bookings</span>
+                        </div>
+                        <div class="call-action-btn"><i class="fa-solid fa-phone"></i></div>
+                    </a>
+                    <a href="tel:+919710375593" class="call-item">
+                        <div class="call-item-details">
+                            <strong>Line 2: +91 97103 75593</strong>
+                            <span>Available 24/7 for Inquiries</span>
+                        </div>
+                        <div class="call-action-btn"><i class="fa-solid fa-phone"></i></div>
+                    </a>
+                </div>
             </div>
-            <div class="popup-body">
-                <a href="tel:+919566066250" class="call-item">
-                    <div class="call-item-details">
-                        <strong>Line 1: +91 95660 66250</strong>
-                        <span>Available 24/7 for Bookings</span>
-                    </div>
-                    <div class="call-action-btn"><i class="fa-solid fa-phone"></i></div>
-                </a>
-                <a href="tel:+919710375593" class="call-item">
-                    <div class="call-item-details">
-                        <strong>Line 2: +91 97103 75593</strong>
-                        <span>Available 24/7 for Inquiries</span>
-                    </div>
-                    <div class="call-action-btn"><i class="fa-solid fa-phone"></i></div>
-                </a>
-            </div>
+            <button class="float-btn call-float-btn" onclick="toggleCallPopup()" aria-label="Open Call Widget">
+                <i class="fa-solid fa-phone"></i>
+            </button>
         </div>
-        <button class="float-btn call-float-btn" onclick="toggleCallPopup()" aria-label="Open Call Widget">
-            <i class="fa-solid fa-phone"></i>
-        </button>
-    </div>
 
-    <div class="widget-container-right">
-        <div class="chat-popup" id="whatsappPopup">
-            <div class="popup-header whatsapp-header">
-                <div class="popup-header-info">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <div>
-                        <h4>The All India Travels</h4>
-                        <span>Online | Replies instantly</span>
+        <div class="widget-group">
+            <div class="chat-popup" id="whatsappPopup">
+                <div class="popup-header whatsapp-header">
+                    <div class="popup-header-info">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <div>
+                            <h4>The All India Travels</h4>
+                            <span>Online | Replies instantly</span>
+                        </div>
+                    </div>
+                    <button class="close-popup" onclick="toggleWhatsAppPopup()">×</button>
+                </div>
+                <div class="popup-body">
+                    <div class="chat-bubble">
+                        Hello! 👋 Welcome to The All India Travels. Need a cab in Chennai or an outstation drop? Let's chat on WhatsApp!
                     </div>
                 </div>
-                <button class="close-popup" onclick="toggleWhatsAppPopup()">×</button>
-            </div>
-            <div class="popup-body">
-                <div class="chat-bubble">
-                    Hello! 👋 Welcome to The All India Travels. Need a cab in Chennai or an outstation drop? Let's chat on WhatsApp!
+                <div class="popup-footer">
+                    <input type="text" id="widgetMessageInput" placeholder="Type your trip details..." onkeypress="handleWidgetEnter(event)">
+                    <button class="send-btn" onclick="sendWidgetMessage()"><i class="fa-solid fa-paper-plane"></i></button>
                 </div>
             </div>
-            <div class="popup-footer">
-                <input type="text" id="widgetMessageInput" placeholder="Type your trip details..." onkeypress="handleWidgetEnter(event)">
-                <button class="send-btn" onclick="sendWidgetMessage()"><i class="fa-solid fa-paper-plane"></i></button>
-            </div>
+            <button class="float-btn whatsapp-float-btn" onclick="toggleWhatsAppPopup()" aria-label="Open WhatsApp Chat">
+                <i class="fa-brands fa-whatsapp"></i>
+            </button>
         </div>
-        <button class="float-btn whatsapp-float-btn" onclick="toggleWhatsAppPopup()" aria-label="Open WhatsApp Chat">
-            <i class="fa-brands fa-whatsapp"></i>
-        </button>
     </div>
 
     <script>
