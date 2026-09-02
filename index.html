@@ -115,13 +115,13 @@
         <a href="outstation-taxi.html">Outstation</a>
         <a href="chennai-airport-taxi.html">Airport</a>
         <div class="dropdown">
-          <a href="#">Locations ▼</a>
+          <a href="#" aria-label="Open locations menu">Locations ▼</a>
           <div class="dropdown-menu">
             <a href="best-drop-taxi-service-adyar.html">Adyar</a>
             <a href="best-drop-taxi-service-annanagar.html">Anna Nagar</a>
             <a href="best-drop-taxi-service-velachery.html">Velachery</a>
             <a href="best-drop-taxi-service-tambaram.html">Tambaram</a>
-            <a href="best-drop-taxi-service-tnagar.html">T Nagar</a>
+            <a href="best-drop-taxi-service-t-nagar.html">T Nagar</a>
             <a href="best-drop-taxi-service-omr.html">OMR</a>
             <a href="best-drop-taxi-service-ecr.html">ECR</a>
           </div>
@@ -136,6 +136,7 @@
     </div>
   </header>
 
+  <main>
   <section class="hero">
     <div class="container">
       <div class="hero-content">
@@ -219,19 +220,19 @@
           </select>
         </div>
         <div class="form-group">
-          <label>From</label>
+          <label for="fromCity">From</label>
           <input type="text" id="fromCity" class="form-control" placeholder="Pickup City" autocomplete="address-level2" required="">
         </div>
         <div class="form-group">
-          <label>To</label>
+          <label for="toCity">To</label>
           <input type="text" id="toCity" class="form-control" placeholder="Drop City" autocomplete="address-level2" required="">
         </div>
         <div class="form-group">
-          <label>Date</label>
+          <label for="travelDate">Date</label>
           <input type="date" id="travelDate" class="form-control" required="">
         </div>
         <div class="form-group">
-          <label>Vehicle</label>
+          <label for="vehicleType">Vehicle</label>
           <select id="vehicleType" class="form-control" required="">
             <option value="Sedan">Sedan (4 Seats)</option>
             <option value="Maruti Ertiga">Maruti Ertiga (6 Seats)</option>
@@ -989,21 +990,22 @@
       </div>
     </div>
   </section>
+  </main>
 
     <footer>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <h4>The All India Travels</h4>
+          <h3>The All India Travels</h3>
           <p>Your trusted partner for safe, comfortable, and affordable taxi services in Chennai, Puducherry, Thiruvallur, Kanchipuram, Chengalpattu, and across Tamil Nadu.</p>
           <div class="social-links">
-            <a href="#">FB</a>
-            <a href="#">IG</a>
-            <a href="#">TW</a>
+            <a href="#" aria-label="Facebook">FB</a>
+            <a href="#" aria-label="Instagram">IG</a>
+            <a href="#" aria-label="Twitter">TW</a>
           </div>
         </div>
         <div class="footer-col">
-          <h4>Services</h4>
+          <h3>Services</h3>
           <ul class="footer-links">
             <li><a href="services.html">Call Taxi</a></li>
             <li><a href="one-way-taxi.html">One Way Taxi</a></li>
@@ -1014,7 +1016,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Top Locations</h4>
+          <h3>Top Locations</h3>
           <ul class="footer-links">
             <li><a href="best-drop-taxi-service-adyar.html">Adyar Taxi</a></li>
             <li><a href="best-drop-taxi-service-annanagar.html">Anna Nagar Taxi</a></li>
@@ -1024,7 +1026,7 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Contact Us</h4>
+          <h3>Contact Us</h3>
           <ul class="footer-links">
             <li>📞 +91 95660 66250</li>
             <li>📱 +91 97103 75593</li>
