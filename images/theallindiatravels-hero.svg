@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" role="img" aria-labelledby="title desc">
+  <title id="title">The All India Travels taxi service</title>
+  <desc id="desc">AnyTime AnyWhere taxi service in Chennai and Tamil Nadu</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dff5f5"/><stop offset="1" stop-color="#8bd1d1"/></linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#334f64"/><stop offset="1" stop-color="#102a43"/></linearGradient>
+    <linearGradient id="gold" x1="0" x2="1"><stop stop-color="#ffd477"/><stop offset="1" stop-color="#f2b84b"/></linearGradient>
+  </defs>
+  <rect width="900" height="650" rx="28" fill="url(#sky)"/>
+  <circle cx="735" cy="115" r="65" fill="#fff" opacity=".6"/>
+  <path d="M0 390 Q180 310 350 395 T900 350 V650 H0Z" fill="#4f9b82"/>
+  <path d="M0 520 Q260 430 470 510 T900 460 V650 H0Z" fill="url(#road)"/>
+  <path d="M0 580 Q260 490 470 570 T900 520" fill="none" stroke="#ffd477" stroke-width="6" stroke-dasharray="32 22"/>
+  <g transform="translate(220 260)">
+    <path d="M80 170 L130 75 Q142 52 175 52 H350 Q380 52 394 76 L445 170Z" fill="#f2b84b" stroke="#102a43" stroke-width="8"/>
+    <path d="M148 78 H360 L392 140 H115Z" fill="#dceaf1" stroke="#167d8d" stroke-width="4"/>
+    <path d="M55 170 H470 Q495 170 495 198 V232 H30 V198 Q30 170 55 170Z" fill="#fff" stroke="#102a43" stroke-width="8"/>
+    <circle cx="120" cy="235" r="43" fill="#102a43" stroke="#fff" stroke-width="10"/>
+    <circle cx="405" cy="235" r="43" fill="#102a43" stroke="#fff" stroke-width="10"/>
+    <text x="262" y="205" text-anchor="middle" fill="#167d8d" font-family="Arial" font-size="22" font-weight="700">ALL INDIA</text>
+  </g>
+  <rect x="34" y="34" width="380" height="150" rx="20" fill="#102a43" opacity=".95"/>
+  <text x="60" y="82" fill="#fff" font-family="Arial" font-size="28" font-weight="700">THE ALL INDIA</text>
+  <text x="60" y="128" fill="url(#gold)" font-family="Arial" font-size="42" font-weight="800">TRAVELS</text>
+  <text x="60" y="160" fill="#dceaf1" font-family="Arial" font-size="19" font-weight="700" letter-spacing="3">ANYTIME ANYWHERE</text>
+  <rect x="570" y="40" width="290" height="92" rx="18" fill="#fff" opacity=".92"/>
+  <text x="715" y="78" text-anchor="middle" fill="#102a43" font-family="Arial" font-size="20" font-weight="700">24/7 CAB SERVICE</text>
+  <text x="715" y="108" text-anchor="middle" fill="#167d8d" font-family="Arial" font-size="17">Chennai • Tamil Nadu</text>
+</svg>
