@@ -88,6 +88,21 @@ document.addEventListener('DOMContentLoaded', () => {
     animElements.forEach(el => el.classList.add('visible'));
   }, 1000);
 
+  // Add a subtle, mouse-following depth effect to content cards on pointer devices.
+  if (window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.service-card, .why-card, .location-card').forEach(card => {
+      card.addEventListener('pointermove', (event) => {
+        const bounds = card.getBoundingClientRect();
+        const rotateX = ((event.clientY - bounds.top) / bounds.height - 0.5) * -4;
+        const rotateY = ((event.clientX - bounds.left) / bounds.width - 0.5) * 5;
+        card.style.transform = `translateY(-5px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+      card.addEventListener('pointerleave', () => {
+        card.style.transform = '';
+      });
+    });
+  }
+
   // Booking Form
   const bookingForm = document.getElementById('bookingForm');
   const destinationInput = document.getElementById('toCity');
