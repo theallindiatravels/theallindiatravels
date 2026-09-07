@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@600;700;800;900&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=9.0">
+  <link rel="preload" href="css/style.css?v=9.0" as="style"><link rel="stylesheet" href="css/style.css?v=9.0">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -152,7 +152,7 @@
         </div>
         <div class="hero-visual animate-from-right delay-2">
           <div class="hero-img-wrap">
-            <img src="images/hero-taxi_v-5.jpg" width="512" height="512" alt="The All India Travels - AnyTime AnyWhere taxi service in Chennai" class="hero-main-img" loading="eager">
+            <img src="images/hero-taxi_v-5.jpg" width="512" height="512" alt="The All India Travels - AnyTime AnyWhere taxi service in Chennai" class="hero-main-img" loading="eager" fetchpriority="high">
           </div>
         </div>
       </div>
