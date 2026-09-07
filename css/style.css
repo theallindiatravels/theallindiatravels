@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@800;900&display=swap');
-
 :root {
   --green-dark: #102a43;
   --green-deep: #164e63;
@@ -425,6 +423,7 @@ header .container { display: flex; justify-content: space-between; align-items: 
 }
 
 .why-section { background: #102a43; color: var(--white); }
+.why-section .why-title-brand { color: var(--gold-light); }
 .why-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; margin-top: 40px; }
 .why-card { background: #1d3a55; backdrop-filter: blur(5px); padding: 38px 30px; min-height: 265px; border-radius: 12px; text-align: center; border: 1px solid rgba(181, 217, 229, 0.2); color: var(--white); transition: transform 0.25s ease, border-color 0.25s ease; }
 .why-card:hover { transform: translateY(-5px); border-color: rgba(242, 184, 75, 0.7); }
