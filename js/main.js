@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const phone = document.getElementById('phoneNumber') ? document.getElementById('phoneNumber').value : 'Not specified';
       const message = `Hello The All India Travels, I want to book a taxi.%0ATrip Type: ${tripType}%0AFrom: ${from}%0ATo: ${to}%0ADate: ${date}%0AVehicle: ${vehicle}%0APhone: ${phone}`;
       if (typeof gtag === 'function') {
-        gtag('event', 'conversion', { 'send_to': 'AW-17946980744/cExgCKO18N8cEIjj5O1C', 'value': 1.0, 'currency': 'INR' });
+        gtag('event', 'conversion', { 'send_to': 'AW-18401394048/cExgCKO18N8cEIjj5O1C', 'value': 1.0, 'currency': 'INR' });
       }
       window.open(`https://wa.me/919566066250?text=${message}`, '_blank');
     });
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const msg = document.getElementById('cMessage').value;
       const message = `Hello The All India Travels, New Enquiry:%0AName: ${name}%0APhone: ${phone}%0AService: ${service}%0AMessage: ${msg}`;
       if (typeof gtag === 'function') {
-        gtag('event', 'conversion', { 'send_to': 'AW-17946980744/cExgCKO18N8cEIjj5O1C', 'value': 1.0, 'currency': 'INR' });
+        gtag('event', 'conversion', { 'send_to': 'AW-18401394048/cExgCKO18N8cEIjj5O1C', 'value': 1.0, 'currency': 'INR' });
       }
       window.open(`https://wa.me/919566066250?text=${message}`, '_blank');
     });
@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     if (typeof gtag === 'function') {
       gtag('event', 'conversion', {
-        'send_to': 'AW-17946980744/wk6PCMOC6d8cEIjj5O1C',
+        'send_to': 'AW-18401394048/wk6PCMOC6d8cEIjj5O1C',
         'value': 1.0,
         'currency': 'INR',
         'event_callback': callback
@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (typeof gtag === 'function' && link.target === '_blank') {
         // For new tab links, just send the event and don't prevent default
         gtag('event', 'conversion', {
-            'send_to': 'AW-17946980744/wk6PCMOC6d8cEIjj5O1C',
+            'send_to': 'AW-18401394048/wk6PCMOC6d8cEIjj5O1C',
             'value': 1.0,
             'currency': 'INR'
         });
