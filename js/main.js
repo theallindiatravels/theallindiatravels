@@ -213,28 +213,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const fleetDots = document.querySelectorAll('#fleetDots .carousel-dot');
 
   if (fleetTrack) {
-    const getCardWidth = () => {
+    let fleetCardWidth = 320;
+    const updateFleetCardWidth = () => {
       const card = fleetTrack.querySelector('.fleet-card');
-      return card ? card.offsetWidth + 24 : 320;
+      fleetCardWidth = card ? card.offsetWidth + 24 : 320;
     };
+    updateFleetCardWidth();
+    window.addEventListener('resize', updateFleetCardWidth, { passive: true });
 
     if (fleetPrevBtn) {
       fleetPrevBtn.addEventListener('click', () => {
-        fleetTrack.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
+        fleetTrack.scrollBy({ left: -fleetCardWidth, behavior: 'smooth' });
       });
     }
 
     if (fleetNextBtn) {
       fleetNextBtn.addEventListener('click', () => {
-        fleetTrack.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+        fleetTrack.scrollBy({ left: fleetCardWidth, behavior: 'smooth' });
       });
     }
 
     fleetDots.forEach(dot => {
       dot.addEventListener('click', () => {
         const index = parseInt(dot.getAttribute('data-index'), 10);
-        const cardWidth = getCardWidth();
-        fleetTrack.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
+        fleetTrack.scrollTo({ left: index * fleetCardWidth, behavior: 'smooth' });
       });
     });
 
@@ -244,8 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
         const scrollLeft = fleetTrack.scrollLeft;
-        const cardWidth = getCardWidth();
-        const activeIndex = Math.min(Math.round(scrollLeft / cardWidth), fleetDots.length - 1);
+        const activeIndex = Math.min(Math.round(scrollLeft / fleetCardWidth), fleetDots.length - 1);
         fleetDots.forEach((dot, idx) => {
           if (idx === activeIndex) {
             dot.classList.add('active');
@@ -264,28 +265,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const reviewDots = document.querySelectorAll('#reviewDots .carousel-dot');
 
   if (reviewTrack) {
-    const getReviewCardWidth = () => {
+    let reviewCardWidth = 340;
+    const updateReviewCardWidth = () => {
       const card = reviewTrack.querySelector('.review-card');
-      return card ? card.offsetWidth + 24 : 340;
+      reviewCardWidth = card ? card.offsetWidth + 24 : 340;
     };
+    updateReviewCardWidth();
+    window.addEventListener('resize', updateReviewCardWidth, { passive: true });
 
     if (reviewPrevBtn) {
       reviewPrevBtn.addEventListener('click', () => {
-        reviewTrack.scrollBy({ left: -getReviewCardWidth(), behavior: 'smooth' });
+        reviewTrack.scrollBy({ left: -reviewCardWidth, behavior: 'smooth' });
       });
     }
 
     if (reviewNextBtn) {
       reviewNextBtn.addEventListener('click', () => {
-        reviewTrack.scrollBy({ left: getReviewCardWidth(), behavior: 'smooth' });
+        reviewTrack.scrollBy({ left: reviewCardWidth, behavior: 'smooth' });
       });
     }
 
     reviewDots.forEach(dot => {
       dot.addEventListener('click', () => {
         const index = parseInt(dot.getAttribute('data-index'), 10);
-        const cardWidth = getReviewCardWidth();
-        reviewTrack.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
+        reviewTrack.scrollTo({ left: index * reviewCardWidth, behavior: 'smooth' });
       });
     });
 
@@ -295,8 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clearTimeout(reviewScrollTimeout);
       reviewScrollTimeout = setTimeout(() => {
         const scrollLeft = reviewTrack.scrollLeft;
-        const cardWidth = getReviewCardWidth();
-        const activeIndex = Math.min(Math.round(scrollLeft / cardWidth), reviewDots.length - 1);
+        const activeIndex = Math.min(Math.round(scrollLeft / reviewCardWidth), reviewDots.length - 1);
         reviewDots.forEach((dot, idx) => {
           if (idx === activeIndex) {
             dot.classList.add('active');
