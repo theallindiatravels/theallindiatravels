@@ -1538,6 +1538,12 @@ footer { background: var(--green-dark); color: var(--white); padding: 80px 0 0; 
     border-radius: 8px;
     transition: background 0.2s ease, color 0.2s ease;
   }
+  .nav-links > .dropdown {
+    width: 100%;
+  }
+  .nav-links > .dropdown > a {
+    text-align: left;
+  }
   .nav-links a:active,
   .nav-links a:hover,
   .nav-links a:focus-visible {
